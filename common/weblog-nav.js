@@ -8,6 +8,7 @@ for (let i = 0; i < navItems.length; i++) {
   }
 }
 if ( hc == 0 ) {
+  alert(document.title);
   // no matches were found
   if ( document.title == "404" ) {
     // do nothing
