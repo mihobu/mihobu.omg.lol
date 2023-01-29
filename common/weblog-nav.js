@@ -8,9 +8,9 @@ for (let i = 0; i < navItems.length; i++) {
   }
 }
 if ( hc == 0 ) {
-  alert(document.title);
+  var re404 = new RegExp("404","g");
   // no matches were found
-  if ( document.title == "404" ) {
+  if ( document.title.match(re404)) {
     // do nothing
     null;
   }
