@@ -11,17 +11,8 @@
   --nav-current: #C20430;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--foreground: #eee;
-		--background: #222;
-		--link: #99e9f2;
-		--unimportant: #ced4da;
-	}
-}
-
 /* HYPERLINK COLORS ================================= */
-/* LVHA-order: :link â€” :visited â€” :hover â€” :active */
+/* LVHA-order: :link :visited :hover :active */
 a { text-decoration: none; }
 a:link { color: var(--link); }
 a:visited { color: var(--link); }
@@ -196,3 +187,13 @@ pre {
 }
 #literal-widget { background-color: #EEE; border-radius: 10px; padding: 10px; }
 
+
+@media (max-width: 500px) {
+	body {
+		font-size: 1em;
+		padding: 1em;
+	}
+	main {
+		padding: 1.5em;
+	}
+}
