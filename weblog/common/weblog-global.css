@@ -29,58 +29,44 @@ a:active { color: var(--link); }
 }
 
 .menu {
-    display: flex;
-    gap: 1.5em;
-    font-size: 18px;
-    text-align: center;
+  display: flex;
+  gap: 1.5em;
+  font-size: 18px;
+  text-align: center;
 }
 
-ul.nav-links {
-    padding-left: 0;
-}
+ul.nav-links { padding-left: 0; }
 
 .menu li {
-    display: inline;
-    list-style: none;
-    padding: 0;
-    text-transform: uppercase;
-    font-family: museo-sans-condensed;
-    font-weight: 300;
-    font-size: 1.2em;
+  list-style: none;
+  padding: 0;
+  text-transform: uppercase;
+  font-family: museo-sans-condensed;
+  font-weight: 300;
+  font-size: 1.2em;
 }
 
-input[type=checkbox] {
-    display: none;
-}
+input[type=checkbox] { display: none; }
 
 .hamburger {
-    display: none;
-    font-size: 2em;
-    user-select: none;
+  display: none;
+  font-size: 2em;
+  user-select: none;
 }
 
 @media (max-width: 600px) {
-    .menu {
-        display: none;
-        position: absolute;
-        right: 0;
-        left: 0;
-        text-align: center;
-        padding 16px 0;
-        background-color: #FFF;
-    }
-
-    .menu li + li {
-        margin-top: 12px;
-    }
-
-    input[type=checkbox]:checked ~ .menu {
-        display: block;
-    }
-
-    .hamburger {
-        display: block;
-    }
+  .menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      left: 0;
+      text-align: center;
+      padding 16px 0;
+      background-color: #FFF;
+  }
+  .menu li { margin: 5px 0; }
+  input[type=checkbox]:checked ~ .menu { display: block; }
+  .hamburger { display: block; }
 }
 
 /* NAVIGATION HYPERLINKS ARE SPECIAL */
