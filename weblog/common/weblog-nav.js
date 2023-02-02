@@ -17,6 +17,6 @@ if ( hc == 0 ) {
   else {
     // If no matches were found, highlight the third item ("BLOG")
     const navItem = document.querySelectorAll("nav a");
-    navItem[2].parentElement.className = "current";
+    navItem[1].parentElement.className = "current";
   }
 }
