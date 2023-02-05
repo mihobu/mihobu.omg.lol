@@ -1,7 +1,7 @@
 ---
 Date: 2023-02-05 16:10
 Type: Template
-Title: Page2 Template
+Title: Page Template
 ---
 
 <!DOCTYPE html>

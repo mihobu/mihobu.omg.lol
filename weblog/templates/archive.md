@@ -1,7 +1,7 @@
 ---
 Date: 2023-02-05 16:13
 Type: Template
-Title: Archive2 Template
+Title: Archive Template
 ---
 
 <!DOCTYPE html>

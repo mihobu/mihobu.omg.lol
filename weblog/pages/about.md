@@ -1,9 +1,9 @@
 ---
 Date: 2023-02-05 16:10
 Type: Page
-Template: Page2 Template
-Title: About Me2
-Location: /about2
+Template: Page Template
+Title: About Me
+Location: /about
 ---
 
 <img alt="Michael Burkhardt, 2021" src="https://mihobu.github.io/mihobu.omg.lol/weblog/about/mb-2021%20(300).jpg" style="width:200px;height:auto;"/>
