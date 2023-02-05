@@ -1,6 +1,6 @@
 ---
 Date: 2021-05-01 13:48
-Tags: sc
+Tags: Ohio State, Teaching
 ---
 
 # My Prior Teaching Assignments
