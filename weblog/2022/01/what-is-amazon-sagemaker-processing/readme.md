@@ -1,6 +1,6 @@
 ---
 Date: 2022-01-09 03:54
-Tags: Cloud, AWS, sc
+Tags: Cloud, AWS
 ---
 
 # What is Amazon SageMaker Processing?

@@ -1,6 +1,6 @@
 ---
 Date: 2023-01-28 11:59
-Tags: Photography, sc
+Tags: Photography
 ---
 
 # Some Photography Lessons Learned

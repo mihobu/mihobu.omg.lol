@@ -5,7 +5,7 @@ Title: About Me
 Location: /about
 ---
 
-<img alt="Michael Burkhardt, 2021" src="https://mihobu.github.io/mihobu.omg.lol/weblog/about/mb-2021%20(300).jpg" style="width:200px;height:auto;"/>
+<img alt="Michael Burkhardt, 2021" src="https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/mb-2021%20(300).jpg" style="width:200px;height:auto;"/>
 
 ## Professional Background
 
@@ -13,11 +13,11 @@ Hi! I've been kicking around the IT industry for a lot of years now. My earliest
 
 I have a bachelor's degree in Computer Science and Engineering from [Ohio State](https://cse.ohio-state.edu/) (where I [teach](/2021/05/my-prior-teaching-assignments) from time to time) and a master's degree in Data Science from [Southern Methodist University](https://datascience.smu.edu/).
 
-I've written code in many languages for online systems, web development projects, system administration, and data mining tasks. Although I've coded in some ancient languages - FORTRAN and JCL come to mind, but not COBOL or LISP - I never actually dealt with [punch cards](https://mihobu.github.io/mihobu.omg.lol/weblog/about/card.jpg). More recently, I've worked in the world of large systems integration with a specialization in IT infrastructure. I currently work as a cloud data architect at [Huntington National Bank](https://huntington.com/), where I am focused on scalable data processing and machine learning in the cloud (mostly AWS).
+I've written code in many languages for online systems, web development projects, system administration, and data mining tasks. Although I've coded in some ancient languages - FORTRAN and JCL come to mind, but not COBOL or LISP - I never actually dealt with [punch cards](https://mihobu.github.io/mihobu.omg.lol/weblog/pages/bout/card.jpg). More recently, I've worked in the world of large systems integration with a specialization in IT infrastructure. I currently work as a cloud data architect at [Huntington National Bank](https://huntington.com/), where I am focused on scalable data processing and machine learning in the cloud (mostly AWS).
 
 <div style="text-align:center">
-  <a href="https://www.youracclaim.com/badges/3ecd5939-c52b-4c29-b48c-5c9503b7f30d" target="_blank"><img src="https://mihobu.github.io/mihobu.omg.lol/weblog/about/aws-cert-saa.png" style="display:inline;width:100px;height:auto;margin:0 auto;"></a>
-  <a href="https://www.youracclaim.com/badges/2d584be0-279b-42ce-a2e2-7fc6fca06bd1" target="_blank"><img src="https://mihobu.github.io/mihobu.omg.lol/weblog/about/aws-cert-mls.png" style="display:inline;width:100px;height:auto;margin:0 auto;"></a>
+  <a href="https://www.youracclaim.com/badges/3ecd5939-c52b-4c29-b48c-5c9503b7f30d" target="_blank"><img src="https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/aws-cert-saa.png" style="display:inline;width:100px;height:auto;margin:0 auto;"></a>
+  <a href="https://www.youracclaim.com/badges/2d584be0-279b-42ce-a2e2-7fc6fca06bd1" target="_blank"><img src="https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/aws-cert-mls.png" style="display:inline;width:100px;height:auto;margin:0 auto;"></a>
 </div>
 
 ## Other Interests

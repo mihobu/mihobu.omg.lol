@@ -1,6 +1,6 @@
 ---
 Date: 2023-01-16 17:20
-Tags: Ham Radio, Radiosport, sc
+Tags: Ham Radio, Radiosport
 Title: Radiosport Roundup, January 2023
 Stub: radiosport-roundup-jan-2023
 ---

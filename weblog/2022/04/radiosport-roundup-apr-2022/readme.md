@@ -1,6 +1,6 @@
 ---
 Date: 2022-04-30 12:00
-Tags: Ham Radio, Radiosport, sc
+Tags: Ham Radio, Radiosport
 Stub: radiosport-roundup-apr-2022
 ---
 

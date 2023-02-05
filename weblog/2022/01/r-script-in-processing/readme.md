@@ -1,6 +1,6 @@
 ---
 Date: 2022-01-16 03:50
-Tags: Cloud, AWS, sc
+Tags: Cloud, AWS
 Stub: r-script-in-processing
 ---
 

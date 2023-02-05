@@ -1,6 +1,6 @@
 ---
 Date: 2023-02-01 16:40
-Tags: Photography, sc
+Tags: Photography
 ---
 
 # My 2023 Photography Challenge

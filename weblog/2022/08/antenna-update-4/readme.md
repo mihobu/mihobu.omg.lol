@@ -1,6 +1,6 @@
 ---
 Date: 2022-08-21 14:20
-Tags: Antennas, Ham Radio, sc
+Tags: Antennas, Ham Radio
 ---
 
 # Antenna Update #4
