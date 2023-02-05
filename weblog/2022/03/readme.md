@@ -1,5 +1,5 @@
 ---
-Date: 2023-03-31 12:00
+Date: 2022-03-31 12:00
 Tags: Ham Radio, Radiosport, sc
 Stub: radiosport-roundup-mar-2022
 ---
