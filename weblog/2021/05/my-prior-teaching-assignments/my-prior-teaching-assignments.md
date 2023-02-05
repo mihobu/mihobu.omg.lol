@@ -1,5 +1,6 @@
 ---
 Date: 2021-05-01 13:48
+Tags: sc
 ---
 
 # My Prior Teaching Assignments
