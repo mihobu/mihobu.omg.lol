@@ -1,7 +1,7 @@
 ---
 Date: 2023-01-14 04:29
 Type: Page
-Template: Page2 Template
+Template: Page Template
 Title: Downloads
 Location: /downloads
 ---

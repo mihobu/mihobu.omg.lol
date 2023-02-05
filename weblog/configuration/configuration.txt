@@ -1,0 +1,32 @@
+# Weblog Configuration
+# Updated : 2023-02-05 16:25
+
+Weblog Title: Michael Burkhardt
+Weblog Description: Michael Burkhardt’s OMG Blog
+Author: Michael Burkhardt
+Separator:  - 
+
+# REFERENCES
+# Time zones   : https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# Date formats : https://advent.weblog.lol/day-4
+Timezone: UTC
+Date format: Y-M-d
+
+# URLs
+Post path format: /Y/m/
+
+# Recent Posts
+Recent posts count: 5
+
+# Tags
+Tag path: /tag/
+
+# Post List
+Post list format: <<[
+<ul>
+[post:begin]<li><a href="$location">$title</a> ($date)</li>[post:end]
+</ul>
+]>>
+
+# Navigation ???
+Navigation: /about, /w8mhb, [Blog](/), /downloads

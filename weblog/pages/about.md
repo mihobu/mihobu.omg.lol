@@ -1,7 +1,6 @@
 ---
 Date: 2023-02-05 16:10
 Type: Page
-Template: Page Template
 Title: About Me
 Location: /about
 ---
