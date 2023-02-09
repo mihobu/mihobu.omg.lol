@@ -19,20 +19,8 @@ Title: Page Template
 <body>
 
   <header>
-    <div id="roundel"><img src="https://mihobu.github.io/mihobu.omg.lol/weblog/common/mb-roundel.png" height="100"/></div>
-    <nav class="navbar">
-      <ul class="nav-links">
-        <input type="checkbox" id="checkbox_toggle" />
-        <label for="checkbox_toggle" class="hamburger">☰</label>
-        <!-- NAVIGATION MENUS -->
-        <div class="menu">
-          <li><a href="/">Latest</a></li>
-          <li><a href="/archive">Archive</a></li>
-          <li><a href="/downloads">Downloads</a></li>
-          <li><a href="/about">About Me</a></li>
-        </div>
-      </ul>
-    </nav>
+    <div class="weblog-title"><a href="/"><img src="https://mihobu.github.io/mihobu.omg.lol/weblog/common/mb-roundel.png" />{weblog-title}</a></div>
+{navigation}
   </header>
 
   <main>
@@ -49,13 +37,5 @@ Title: Page Template
   </footer>
 
 </body>
-<script>
-var hc = 0;
-const navItems = document.querySelectorAll("nav a");
-loc = window.location.href.toString().split(window.location.host)[1];
-if ( loc == "/" ) { navItems[0].parentElement.className = "current"; }
-else if ( loc == "/archive" ) { navItems[1].parentElement.className = "current"; }
-else if ( loc == "/downloads" ) { navItems[2].parentElement.className = "current"; }
-else if ( loc == "/about" ) { navItems[3].parentElement.className = "current"; }
-</script>
+
 </html>
