@@ -1,0 +1,59 @@
+/* START CUSTOM CSS */
+:root {
+  --mb-link-color: #008FC6;
+  --prami-pink: #ED72AB;
+  --mb-body-bg-color: #C0C8CF;
+  --mb-main-bg-color: #E0E8EF;
+  --mb-icon-color: #9A00C6;
+}
+a:link,a:visited,
+a:hover,a:active,
+#pronouns a:link,
+#pronouns a:visited,
+#pronouns a:hover,
+#pronouns a:active
+{
+  color: var(--mb-link-color);
+  text-decoration: underline dotted;
+  text-decoration-color: var(--mb-link-color);
+  border: none;
+}
+div { color: #444444; }
+i.fa-solid,
+i.fa-brands,
+i.omg-icon { color: var(--mb-icon-color); }
+i.omg-verified { color: var(--prami-pink) !important; }
+body { background-color: var(--mb-body-bg-color); }
+main { background-color: var(--mb-main-bg-color); }
+#profile-picture {
+  background-color: var(--mb-main-bg-color);
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #C8C9CA;
+  border-width: 10px;
+  width: 200px;
+  height: 200px;
+}
+#nowlol {
+  display:flex;
+  flex-wrap:wrap;
+  gap:1em;
+  background:#F8F9FA;
+  color:#111;
+  border-radius:.5em;
+  padding:1em;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:1.5em;
+}
+#nowlol a:link,
+#nowlol a:hover,
+#nowlol a:visited,
+#nowlol a:active {
+  color: var(--mb-link-color);
+  text-decoration: none;
+  border: none;
+}
+div.statuslol {
+  box-shadow: 0 0 10px #888888;
+}
