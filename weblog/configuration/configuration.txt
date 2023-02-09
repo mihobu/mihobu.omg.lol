@@ -13,7 +13,7 @@ Canonical domain: mb.monkeywalk.com
 // General config stuff
 // =========================================
 Separator:  - 
-Navigation: /about, /w8mhb, [Blog](/), /downloads
+Navigation: [Latest](/), /archive, /downloads, /about
 
 // =========================================
 // Time stuff

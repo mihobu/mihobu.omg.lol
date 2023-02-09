@@ -11,6 +11,8 @@ Title: Page Template
   <title>{weblog-title}{separator}{post-title}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.cache.lol/profiles/themes/css/base.css" rel="stylesheet">
+  <link href="https://cdn.cache.lol/profiles/themes/css/dracula.css" rel="stylesheet">
   <style>
 @import url("https://mihobu.github.io/mihobu.omg.lol/weblog/common/weblog-global.css");
   </style>
