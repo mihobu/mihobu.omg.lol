@@ -27,8 +27,9 @@
 
 body {
   font-size: 22px;
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--mb-main-fg-color);
+  background: var(--mb-body-bg-color);
+  padding: 0;
 }
 
 /* =============================================================
@@ -90,6 +91,7 @@ h1 {
   color: var(--mb-h1-color);
   margin: 1rem 0;
   padding-right: 0.5em;
+  text-align: center;
 }
 
 h2 {
@@ -113,7 +115,7 @@ h3 {
 header,
 main,
 footer {
-  max-width: 50em;
+  max-width: 45em;
   margin: 2em auto;
   padding: 0 1em;
 }
@@ -222,6 +224,10 @@ iframe {
   padding: 2px;
 }
 
+main img {
+  width: 100%;
+}
+
 /* =============================================================
 ** POSTS
 ** ============================================================= */
@@ -229,7 +235,7 @@ iframe {
 .post-info,
 .post-tags {
   font-size: 85%;
-  color: var(--foreground);
+  color: var(--mb-main-fg-color);
   text-align: right;
 }
 
@@ -316,9 +322,9 @@ iframe {
 
 .post-list__post-link {
   background: var(--btn-bg);
-  border: 1px solid var(--foreground) !important;
+  border: 1px solid var(--mb-main-fg-color) !important;
   border-radius: 0.5em;
-  color: var(--foreground) !important;
+  color: var(--mb-main-fg-color) !important;
   padding: 0.3em 1em 0.3em 0.4em;
   text-decoration: none;
 } 
@@ -353,11 +359,11 @@ table {
 
 td,
 th {
-  padding: .75em;
+  padding: .4em;
   text-align: left;
-  border: 1px solid var(--comment);
 }
 
+td { border-top: 1px solid var(--mb-body-bg-color); }
 /* =============================================================
 ** NOWLOL CALLOUTS
 ** ============================================================= */
