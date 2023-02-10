@@ -1,7 +1,6 @@
 /* IMPORTS */
 @import url('https://static.omg.lol/type/fontawesome-free/css/all.css');
-@import url('https://use.typekit.net/yqe5iiy.css');
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* MY CUSTOM COLORS */
 :root {
@@ -27,7 +26,7 @@
  * { box-sizing: border-box; }
 
 body {
-  font-family: laski-slab, serif;
+  font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 22px;
@@ -71,11 +70,10 @@ header nav li a {
 }
 
 div.weblog-title {
-  font-family: ff-tisa-sans-web-pro, sans-serif;
   font-size: 1.6em;
   margin: 0 0 1rem 0;
   padding-right: 0.5em;
-  font-weight: 900;
+  font-weight: 700;
 }
 div.weblog-title a:link,
 div.weblog-title a:hover,
@@ -91,9 +89,6 @@ div.weblog-title a:visited {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: ff-tisa-sans-web-pro, sans-serif;
-  font-weight: 800;
-  font-style: normal;
   margin: 1rem 0;
   padding-right: 0.5em;
 }
@@ -202,19 +197,10 @@ code {
   word-wrap: break-word;
 }
 
-/* pre,
-code {
-  font-size: 90%;
-  font-family: gemeli-mono, serif;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--mb-code-color);
-} */
-
 pre code {
   background-color: var(--mb-code-bg);
   color: var(--mb-code-fg);
-  font-family: gemeli-mono, monospace;
+  font-family: 'Fira Code', monospace;
   font-weight: 400;
   font-style: normal;
   border-radius: 0.75em;
