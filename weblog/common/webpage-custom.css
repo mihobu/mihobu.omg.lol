@@ -32,10 +32,10 @@ i.fa-brands,
 i.omg-icon { color: var(--mb-icon-color); }
 i.omg-verified { color: var(--prami-pink) !important; }
 #profile-picture {
-  border-radius: 0.5em;
+  border-radius: 50%;
   border-style: solid;
   border-color: var(--mb-body-bg-color);
-  border-width: 10px;
+  border-width: 0.5em;
 }
 #nowlol {
   display:flex;
