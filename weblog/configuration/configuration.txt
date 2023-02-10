@@ -4,8 +4,8 @@
 // =========================================
 // About the Weblog
 // =========================================
-Weblog title: Michael Burkhardt
-Weblog description: Michael Burkhardt’s OMG Blog
+Weblog title: Michael Burkhardt’s Weblog
+Weblog description: Michael Burkhardt’s Weblog
 Author: Michael Burkhardt
 Canonical domain: mb.monkeywalk.com
 

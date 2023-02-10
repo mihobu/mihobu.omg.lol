@@ -1,10 +1,18 @@
 /* START CUSTOM CSS */
+@import url('https://use.typekit.net/xob4bhk.css');
 :root {
   --mb-link-color: #008FC6;
   --prami-pink: #ED72AB;
   --mb-body-bg-color: #C0C8CF;
   --mb-main-bg-color: #E0E8EF;
   --mb-icon-color: #9A00C6;
+}
+main { background-color: var(--mb-main-bg-color); }
+body {
+  font-family: fira-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--mb-body-bg-color);
 }
 a:link,a:visited,
 a:hover,a:active,
@@ -23,8 +31,6 @@ i.fa-solid,
 i.fa-brands,
 i.omg-icon { color: var(--mb-icon-color); }
 i.omg-verified { color: var(--prami-pink) !important; }
-body { background-color: var(--mb-body-bg-color); }
-main { background-color: var(--mb-main-bg-color); }
 #profile-picture {
   background-color: var(--mb-main-bg-color);
   border-radius: 50%;
@@ -57,3 +63,4 @@ main { background-color: var(--mb-main-bg-color); }
 div.statuslol {
   box-shadow: 0 0 10px #888888;
 }
+.atm { color: var(--mb-link-color); }
