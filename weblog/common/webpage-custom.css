@@ -5,6 +5,7 @@
   --prami-pink: #ED72AB;
   --mb-body-bg-color: #C0C8CF;
   --mb-main-bg-color: #E0E8EF;
+  --mb-main-fg-color: #444444;
   --mb-icon-color: #9A00C6;
 }
 main { background-color: var(--mb-main-bg-color); }
@@ -26,31 +27,29 @@ a:hover,a:active,
   text-decoration-color: var(--mb-link-color);
   border: none;
 }
-div { color: #444444; }
 i.fa-solid,
 i.fa-brands,
 i.omg-icon { color: var(--mb-icon-color); }
 i.omg-verified { color: var(--prami-pink) !important; }
 #profile-picture {
-  background-color: var(--mb-main-bg-color);
-  border-radius: 50%;
+  border-radius: 0.5em;
   border-style: solid;
-  border-color: #C8C9CA;
+  border-color: var(--mb-body-bg-color);
   border-width: 10px;
-  width: 200px;
-  height: 200px;
 }
 #nowlol {
   display:flex;
   flex-wrap:wrap;
   gap:1em;
   background:#F8F9FA;
-  color:#111;
+  color: var(--mb-main-fg-color);
   border-radius:.5em;
   padding:1em;
   align-items:center;
   justify-content:center;
   margin-bottom:1.5em;
+  font-size: 90%;
+  letter-spacing: 0.1ch;
 }
 #nowlol a:link,
 #nowlol a:hover,
