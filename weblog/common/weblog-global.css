@@ -399,16 +399,3 @@ div.statuslol {
   box-shadow: 0 0 10px #888888;
 }
 
-/* =============================================================
-** PROFILE PIC
-** ============================================================= */
-
-#profile-picture {
-  border-radius: 50%;
-  border-style: solid;
-  border-color: var(--mb-body-bg-color);
-  border-width: 10px;
-  width: 200px;
-  height: 200px;
-  text-align: center;
-}

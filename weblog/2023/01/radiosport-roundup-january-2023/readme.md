@@ -18,7 +18,7 @@ Stub: radiosport-roundup-jan-2023
 |2023-01-09|ERC|[Worked 20 Grid Squares in Spain](https://mihobu.github.io/mihobu.omg.lol/weblog/2023/01/radiosport-roundup-january-2023/W8MHB-GRIDEA-20_ERC.jpg)|
 |2023-01-09|ERC|[Worked 2 Stations in Madeira](https://mihobu.github.io/mihobu.omg.lol/weblog/2023/01/radiosport-roundup-january-2023/W8MHB-WDCT3-2_ERC.jpg)|
 |2023-01-09|ERC|[Worked 25 Stations in France](https://mihobu.github.io/mihobu.omg.lol/weblog/2023/01/radiosport-roundup-january-2023/W8MHB-WDFR-25_ERC.jpg)|
-|2023-01-14|FT8 Digital Mode Club (FT8DMC)|[Worked 25 French Stations](https://mihobu.github.io/mihobu.omg.lol/weblog/2023/01/radiosport-roundup-january-2023/W8MHB-WFSA-II_FT8DMC.jpg)|
+|2023-01-14|FT8DMC|[Worked 25 French Stations](https://mihobu.github.io/mihobu.omg.lol/weblog/2023/01/radiosport-roundup-january-2023/W8MHB-WFSA-II_FT8DMC.jpg)|
 |2023-01-04|POTA|[New Year's Hunter - 2023](https://mihobu.github.io/mihobu.omg.lol/weblog/2023/01/radiosport-roundup-january-2023/pota-new-years-hunter.png)|
 |2023-01-18|POTA|[Late Shift Hunter - 100](https://mihobu.github.io/mihobu.omg.lol/weblog/2023/01/radiosport-roundup-january-2023/pota-late-shift-hunter.png)|
 |2023-01-10|QRZ.com|[12 Days of QRZ](https://mihobu.github.io/mihobu.omg.lol/weblog/2023/01/radiosport-roundup-january-2023/W8MHB-QRZ-12DAYS2022.png)|

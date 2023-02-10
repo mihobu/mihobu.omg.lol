@@ -31,12 +31,7 @@ i.fa-solid,
 i.fa-brands,
 i.omg-icon { color: var(--mb-icon-color); }
 i.omg-verified { color: var(--prami-pink) !important; }
-#profile-picture {
-  border-radius: 50%;
-  border-style: solid;
-  border-color: var(--mb-body-bg-color);
-  border-width: 0.5em;
-}
+
 #nowlol {
   display:flex;
   flex-wrap:wrap;
@@ -63,3 +58,17 @@ div.statuslol {
   box-shadow: 0 0 10px #888888;
 }
 .atm { color: var(--mb-link-color); }
+
+/* =============================================================
+** PROFILE PIC
+** ============================================================= */
+
+#profile-picture {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--mb-body-bg-color);
+  border-width: 10px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
