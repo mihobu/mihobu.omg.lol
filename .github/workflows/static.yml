@@ -36,11 +36,11 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # '.' to upload entire repository
-          path: 'common'
+          path: 'weblog/common'
       - name: Upload artifact - w8mhb
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'w8mhb'
+          path: 'weblog/w8mhb'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
