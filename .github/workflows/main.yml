@@ -1,7 +1,9 @@
 name: Deploy weblog content to omg.lol
 
-on: [push]
-
+# Runs on pushes targeting the "main" branch
+on: 
+  push:
+    branches: ["main"]
 jobs:
   weblog_import:
     runs-on: ubuntu-latest
