@@ -5,21 +5,20 @@ Title: About Me
 Location: /about
 ---
 
-<img alt="Michael Burkhardt, 2021" src="https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/mb-2021%20(300).jpg" style="width:200px;height:auto;"/>
+# About Me
 
-## Professional Background
-
-Hi! I've been kicking around the IT industry for a lot of years now. My earliest experience in computing was entering BASIC programs on the [Commodore VIC-20](https://oldcomputers.net/vic20.html) from code listings printed in [magazines](https://www.vintage-computer.com/publications.php?compute). The oldest surviving specimen of my work as an aspiring Computer Scientist was a [horse race](https://www.youtube.com/watch?v=ci7r2rHbNiQ) I co-wrote in Pascal in 12th grade. (If you think running k-folds cross validation is slow, you should see what it was like to [compile Pascal on the Apple IIe](https://www.youtube.com/watch?v=2AawRLA25og) in 1989!)
-
-I have a bachelor's degree in Computer Science and Engineering from [Ohio State](https://cse.ohio-state.edu/) (where I [teach](/2021/05/my-prior-teaching-assignments) from time to time) and a master's degree in Data Science from [Southern Methodist University](https://datascience.smu.edu/).
-
-I've written code in many languages for online systems, web development projects, system administration, and data mining tasks. Although I've coded in some ancient languages - FORTRAN and JCL come to mind, but not COBOL or LISP - I never actually dealt with [punch cards](https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/card.jpg). More recently, I've worked in the world of large systems integration with a specialization in IT infrastructure. I currently work as a cloud data architect at [Huntington National Bank](https://huntington.com/), where I am focused on scalable data processing and machine learning in the cloud (mostly AWS).
-
-<div style="text-align:center">
-  <a href="https://www.youracclaim.com/badges/3ecd5939-c52b-4c29-b48c-5c9503b7f30d" target="_blank"><img src="https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/aws-cert-saa.png" style="display:inline;width:100px;height:auto;margin:0 auto;"></a>
-  <a href="https://www.youracclaim.com/badges/2d584be0-279b-42ce-a2e2-7fc6fca06bd1" target="_blank"><img src="https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/aws-cert-mls.png" style="display:inline;width:100px;height:auto;margin:0 auto;"></a>
+<div id="profile-picture-container">
+  <img id="profile-picture" alt="Michael Burkhardt" src="https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/mb-2021%20(300).jpg" />
 </div>
 
-## Other Interests
+Hi! I am Michael and I live in Columbus, Ohio. I’ve been tinkering with computers since the early 1980's. My earliest experience was entering BASIC programs on the [Commodore VIC-20](https://oldcomputers.net/vic20.html) from code listings printed in books and [magazines](https://www.vintage-computer.com/publications.php?compute). The oldest *surviving* specimen of that early work is a [horse race](https://www.youtube.com/watch?v=ci7r2rHbNiQ) program I co-wrote in Pascal in 12th grade. If you think running k-folds cross validation is slow, you should see what it was like to [compile Pascal on the Apple IIe](https://www.youtube.com/watch?v=2AawRLA25og) in 1989! FWIW, I’ve never actually worked with [punch cards](https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/card.jpg). These days I work as a cloud data architect and I tinker with my [profile](https://mihobu.monkeywalk.com), [weblog](https://mb.monkeywalk.com), and [now page](https://mihobu.monkeywalk.com/now). For more about my professional background, I invite you to visit my [LinkedIn profile](https://linkedin.com/in/mihobu).
 
-I have more hobbies than I can keep up with, but I manage to engage in all of them at least some of the time. My favorites are [Amateur Radio](https://qrz.com/db/W8MHB), [photography](https://www.flickr.com/photos/mihobu), travel, certain outdoor pursuits (hiking, biking, kayaking), and crochet. I also read a fair bit—mostly non-fiction but also a novel here and there. I’m fairly active on social media. You’ll find me mostly on [Mastodon](https://social.lol/@mihobu), [Reddit](https://reddit.com/user/mihobu), and a few Discord servers.
+## My Interests
+
+My favorite things are traveling and [photography](https://www.flickr.com/people/mihobu/), which generally go hand in hand. As always, I’m behind on posting my most recent travel photos. I’ve had my [Amateur Radio](https://qrz.com/db/W8MHB) license since I was 12 years old. After quite a few years of inactivity, I picked up the hobby again last year and it’s been just as much fun as I remember.
+
+In the warmer months, you can find me out on my bicycle quite a lot, although Columbus isn’t the most bike-friendly place in the world. I also like to hike and kayake occasionally, and my wife tells me that stand-up paddling is in my future too.
+
+I gave up Facebook, Instagram, and Twitter, but you can find me on the friendlier alternatives [Mastodon](https://social.lol/@mihobu) and [Reddit](https://reddit.com/user/mihobu). I’m engaged on a few Discord servers too.
+
+

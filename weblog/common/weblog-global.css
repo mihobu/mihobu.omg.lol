@@ -14,13 +14,13 @@
   --mb-nav-icon-color: #888888;
   --mb-h1-color: #444444;
   --mb-h2-color: var(--mb-main-fg-color);
-  --mb-tag-color: #2CC600;
+  --mb-tag-color: #008FC6;
   --mb-code-fg: #66FF66;
   --mb-code-bg: #444444;
 }
 
 /* =============================================================
-** GLOBAL STYLES BY ELEMENT
+** IN THE BEGINING
 ** ============================================================= */
 
  * { box-sizing: border-box; }
@@ -29,10 +29,34 @@ body {
   font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 22px;
+  font-size: 120%;
   color: var(--mb-main-fg-color);
   background: var(--mb-body-bg-color);
   padding: 2em;
+}
+
+main {
+  border: none;
+  padding: 1em;
+  text-align: left;
+  background-color: var(--mb-main-bg-color);
+  margin
+}
+
+header {
+  margin-top: 0;
+}
+
+header,
+main,
+footer {
+  max-width: 45em;
+  margin: 1em auto;
+  padding: 0 1em;
+}
+
+article {
+  margin-bottom: 2em;
 }
 
 /* =============================================================
@@ -68,6 +92,10 @@ header nav li a {
   margin-right: 1em;
   text-decoration: none;
 }
+
+/* =============================================================
+** TITLE AND HEADINGS
+** ============================================================= */
 
 div.weblog-title {
   font-size: 1.6em;
@@ -111,33 +139,6 @@ h3 {
   padding-right: 0.5em;
 }
 
-/* =============================================================
-** CONTAINERS
-** ============================================================= */
-
-header,
-main,
-footer {
-  max-width: 45em;
-  margin: 1em auto;
-  padding: 0 1em;
-}
- 
-header {
-  margin-top: 0;
-}
-
-main {
-  border: 1px solid var(--main-line);
-  padding: 1em;
-  text-align: left;
-  background-color: var(--mb-main-bg-color);
-  margin
-}
-
-article {
-  margin-bottom: 2em;
-}
 /* =============================================================
 ** TEXT STYLES
 ** ============================================================= */
@@ -183,15 +184,15 @@ a:hover,a:active,
 ** ============================================================= */
 
 hr {
-  border: 0;
-  height: 1px;
-  background: var(--comment);
+  border-width: 1px 0 0 0;
+  border-color: var(--mb-body-bg-color);
+  border-style: solid;
   margin: 2em 0;
 }
 
 code {
   background: var(--background);
-  border: 1px solid var(--comment);
+  border: none;
   padding: 0.2em 0.3em;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -211,27 +212,15 @@ pre code {
   width: 100%;
 }
 
-img,
-iframe {
-  border-radius: 0.75em;
-  max-width: 100%;
-}
-
-.img-flow {
-  background-color: var(--caption-bg);
-  border: 1px solid var(--comment);
-  display: block;
-  margin: 0.5em auto;
-  max-width: 100%;
-  padding: 2px;
-}
-
 main img {
   width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 0.75em;
 }
 
 /* =============================================================
-** POSTS
+** POST TAGS AND POST INFO
 ** ============================================================= */
 
 .post-info,
@@ -247,98 +236,6 @@ main img {
   padding-right: 0.5em;
   padding-left: 0.5em;
 }
-
-.post-summary {
-  padding-left: 2em;
-  position: relative;
-}
-
-.post-summary i {
-  left: 0;
-  position: absolute;
-  top: 0.25em;
-}
-
-.post-list {
-  border-top: 1px solid var(--comment);
-  margin: 2em 0;
-}
-
-.post-list__item {
-  border-top: 1px solid var(--comment);
-  padding: 1em;
-}
-
-.post-list__item:nth-child(odd) {
-  background-color: var(--highlight);
-}
-
-.post-list__item:first-child {
-  border-top: none;
-}
-
-.post-list__item::marker {
-  color: var(--purple);
-  font-weight: bold;
-}
-
-.post-list__post {
-  display: grid;
-  grid-column-gap: 0.5em;
-  grid-template-areas:
-    "title"
-    "img"
-    "summary"
-    "info";
-}
-
-.post-list__post-title {
-  grid-area: title;
-}
-
-.post-list__post-img {
-  grid-area: img;
-  margin: 0 auto;
-  max-width: 150px;
-}
-
-.post-list__post-img img {
-  border-radius: 0.5em;
-}
-
-.post-list__post-summary {
-  grid-area: summary;
-}
-
-.post-list__post-info {
-  align-items: baseline;
-  border-top: 1px solid var(--comment);
-  display: flex;
-  flex-flow: row wrap;
-  gap: 1em;
-  grid-area: info;
-  justify-content: space-between;
-  margin-top: 1em;
-  padding-top: 1em;
-}
-
-.post-list__post-link {
-  background: var(--btn-bg);
-  border: 1px solid var(--mb-main-fg-color) !important;
-  border-radius: 0.5em;
-  color: var(--mb-main-fg-color) !important;
-  padding: 0.3em 1em 0.3em 0.4em;
-  text-decoration: none;
-} 
-
- .recent-post__time {
-  background-color: var(--highlight);
-  padding: 0 5px;
-}
-
-/* =============================================================
-** TAGS
-** ============================================================= */
 
 .tag {
   background: var(--mb-tag-color);
@@ -366,36 +263,20 @@ th {
 }
 
 td { border-top: 1px solid var(--mb-body-bg-color); }
-/* =============================================================
-** NOWLOL CALLOUTS
-** ============================================================= */
-
-#nowlol {
-  display:flex;
-  flex-wrap:wrap;
-  gap:1em;
-  background:#F8F9FA;
-  color:#111;
-  border-radius:.5em;
-  padding:1em;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:1.5em;
-}
-#nowlol a:link,
-#nowlol a:hover,
-#nowlol a:visited,
-#nowlol a:active {
-  color: var(--mb-link-color);
-  text-decoration: none;
-  border: none;
-}
 
 /* =============================================================
-** STATUSLOL CALLOUT
+** PROFILE PIC
 ** ============================================================= */
 
-div.statuslol {
-  box-shadow: 0 0 10px #888888;
+#profile-picture-container {
+  text-align: center;
 }
 
+#profile-picture {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--mb-body-bg-color);
+  border-width: 10px;
+  width: 200px;
+  height: 200px;
+}
