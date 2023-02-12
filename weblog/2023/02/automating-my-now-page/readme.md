@@ -134,8 +134,6 @@ def lambda_handler(event, context):
     )
 ```
 
-Good coding practice suggests that I store my API key in AWS Secrets Manager. And it’s very easy to do. It’s also not trivially cheap. Running the Lambda function costs pennies per month, but storing a secret in Secrets Manager costs 40 cents! So yes, I hardcoded my key.
-
 ## Missing Library
 
 Setting up the Lambda function was very easy using the AWS Console, but I ran into one snag:
