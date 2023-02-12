@@ -167,8 +167,8 @@ From there, we simply attach the Layer to the Lambda Function. A quick test: suc
 
 ## Scheduling
 
-To auto-generate the now page content, I set up a scheduler in Amazon EventBridge to invode my Lambda function every 8 hours.
+To auto-generate the now page content, I set up a scheduler in Amazon EventBridge to invoke my Lambda function every 8 hours.
 
 ## Acknowledgements
 
-Thanks to [Adam](https://adam.omg.lol) and the entire [omg.lol](https://home.omg.lol) for providing a platform that is full of fun and energy, as well as to [Cory](https://cory.omg.lol) and [Robb](https://robb.omg.lol) who provided the inspiration for this little project.
+Thanks to [Adam](https://adam.omg.lol) and the entire [omg.lol](https://home.omg.lol) for providing a platform that is full of fun and energy, as well as to [Cory](https://cory.omg.lol) and [Robb](https://robb.omg.lol) who inspired this little project.
