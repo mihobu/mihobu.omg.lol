@@ -195,11 +195,13 @@ hr {
 }
 
 code {
-  border: 1px solid var(--mb-code-bg);
-  color: var(--mb-code-fg);
+  border: none;
+  background-color: #D0D8DF;
+  color: #006600;
   padding: 0.2em 0.3em;
   white-space: pre-wrap;
   word-wrap: break-word;
+  border-radius: 0.25em;
 }
 
 pre code {

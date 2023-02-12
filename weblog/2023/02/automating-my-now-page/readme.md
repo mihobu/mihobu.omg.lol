@@ -41,7 +41,7 @@ As you can see, each entry stores the date, icon, link text, and URL. I’m not 
 
 I use Python a lot these days, so it was the easiest for me to work with. The idea is simple (and so, in fact, is the script): load the YAML file, generate markdown, upload to the omg.lol `/now` [API](https://api.omg.lol).
 
-Here's the code (`nowbot.py`):
+Here's the code `nowbot.py`:
 
 ```
 import boto3
