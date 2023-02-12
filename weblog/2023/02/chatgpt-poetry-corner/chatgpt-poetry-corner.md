@@ -6,7 +6,7 @@ Tags: AI
 
 # ChatGPT Poetry Corner
 
-I asked [CahtGPT](https://openai.com/blog/chatgpt/) to write a poem about automation using AWS Lambda and YAML, and here's what it produced:
+I asked [ChatGPT](https://openai.com/blog/chatgpt/) to write a poem about automation using AWS Lambda and YAML, and here's what it produced:
 
 ```
 In the world of technology, automation reigns,
