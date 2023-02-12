@@ -1,6 +1,6 @@
 ---
-Date: 2023-02-01 16:40
-Tags: Photography
+Date: 2023-02-12 16:40
+Tags: Cloud, AWS
 Stub: automating-my-now-page
 ---
 

@@ -195,8 +195,8 @@ hr {
 }
 
 code {
-  background: var(--background);
-  border: none;
+  border: 1px solid var(--mb-code-bg);
+  color: var(--mb-code-fg);
   padding: 0.2em 0.3em;
   white-space: pre-wrap;
   word-wrap: break-word;
