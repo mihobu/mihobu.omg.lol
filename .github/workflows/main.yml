@@ -1,3 +1,5 @@
+name: Deploy weblog content to omg.lol
+
 on: [push]
 
 jobs:
