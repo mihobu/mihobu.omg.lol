@@ -6,7 +6,7 @@
   --mb-body-bg-color: #C0C8CF;
   --mb-main-bg-color: #E0E8EF;
   --mb-main-fg-color: #444444;
-  --mb-icon-color: hsl(340,25%,50%);
+  --mb-icon-color: hsl(40,25%,50%);
 }
 main { background-color: var(--mb-main-bg-color); }
 body {
@@ -82,14 +82,15 @@ div.statuslol {
 i.fa-headphones-simple,
 i.fa-apple,
 i.fa-microphone-lines {
-  color: hsl(40,25%,50%);
+  color: hsl(130,25%,50%);
 }
 
 /* READING */
 i.fa-book-open-reader,
 i.fa-book,
+i.fa-book-open,
 i.fa-book-atlas {
-  color: hsl(100,25%,50%);
+  color: hsl(220,25%,50%);
 }
 
 /* WATCHING */
@@ -100,26 +101,9 @@ i.fa-baseball,
 i.fa-basketball,
 i.fa-football,
 i.pied-piper-pp { 
-  color: hsl(160,25%,50%);
+  color: hsl(310,25%,50%);
 }
 
-/* TINKERING */
-i.fa-screwdriver-wrench,
-i.fa-robot,
-i.network-wired,
-i.wifi,
- {
-  color: hsl(220,25%,50%);
-}
 
-/* DOING */
-i.fa-water,
-i.fa-person-walking,
-i.fa-person-swimming,
-i.fa-person-running,
-i.fa-person-hiking,
-i.fa-person-biking,
-i.fa-camera {
-  color: hsl(280,25%,50%)
-}
+
 
