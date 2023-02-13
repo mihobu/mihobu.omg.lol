@@ -72,3 +72,12 @@ div.statuslol {
   height: 200px;
   text-align: center;
 }
+
+/* =============================================================
+** CATEGORY ICONS FOR THE NOW PAGE
+** ============================================================= */
+
+i.fa-headphones-simple { color: #3AA; }
+i.fa-book-open-reader { color: #A3A; }
+i.fa-tv { color: #3A3; }
+i.fa-screwdriver-wrench { color: #AA3; }
