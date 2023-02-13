@@ -75,7 +75,7 @@ div.statuslol {
 
 /* =============================================================
 ** CATEGORY ICONS FOR THE NOW PAGE
-** 40, 100, 160, 220, 280, 340
+** 4 colors: 40, 130, 220, 310
 ** ============================================================= */
 
 /* LISTENING */
@@ -83,6 +83,7 @@ i.fa-music,
 i.fa-headphones,
 i.fa-headphones-simple,
 i.fa-apple,
+i.fa-microphone,
 i.fa-microphone-lines,
 i.fa-podcast {
   color: hsl(130,50%,50%);
@@ -107,6 +108,10 @@ i.fa-pied-piper-pp {
   color: hsl(310,50%,50%);
 }
 
-
-
+/* ONE COLOR FOR ALL ICONS ON PROFILE PAGE */
+#profile-items i.fa-solid,
+#profile-items i.fa-brands,
+#profile-items i.omg-icon {
+  color: hsl(220,50%,50%);
+}
 
