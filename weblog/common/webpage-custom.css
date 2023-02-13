@@ -79,7 +79,7 @@ div.statuslol {
 ** ============================================================= */
 
 /* LISTENING */
-i.music,
+i.fa-music,
 i.fa-headphones,
 i.fa-headphones-simple,
 i.fa-apple,
@@ -103,7 +103,7 @@ i.fa-futbol,
 i.fa-baseball,
 i.fa-basketball,
 i.fa-football,
-i.pied-piper-pp { 
+i.fa-pied-piper-pp { 
   color: hsl(310,50%,50%);
 }
 
