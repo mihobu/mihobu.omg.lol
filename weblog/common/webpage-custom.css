@@ -6,7 +6,7 @@
   --mb-body-bg-color: #C0C8CF;
   --mb-main-bg-color: #E0E8EF;
   --mb-main-fg-color: #444444;
-  --mb-icon-color: hsl(40,25%,50%);
+  --mb-icon-color: hsl(40,50%,50%);
 }
 main { background-color: var(--mb-main-bg-color); }
 body {
@@ -79,10 +79,13 @@ div.statuslol {
 ** ============================================================= */
 
 /* LISTENING */
+i.music,
+i.fa-headphones,
 i.fa-headphones-simple,
 i.fa-apple,
-i.fa-microphone-lines {
-  color: hsl(130,25%,50%);
+i.fa-microphone-lines,
+i.fa-podcast {
+  color: hsl(130,50%,50%);
 }
 
 /* READING */
@@ -90,7 +93,7 @@ i.fa-book-open-reader,
 i.fa-book,
 i.fa-book-open,
 i.fa-book-atlas {
-  color: hsl(220,25%,50%);
+  color: hsl(220,50%,50%);
 }
 
 /* WATCHING */
@@ -101,7 +104,7 @@ i.fa-baseball,
 i.fa-basketball,
 i.fa-football,
 i.pied-piper-pp { 
-  color: hsl(310,25%,50%);
+  color: hsl(310,50%,50%);
 }
 
 
