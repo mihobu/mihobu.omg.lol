@@ -81,9 +81,8 @@ header nav li::before {
   display: inline-block;
   font: var(--fa-font-solid);
   padding-right: 0.5em;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  color: var(--mb-nav-icon-color);
+  text-rendering: optimizelegibility;
+  color: var(--mb-h1-color);
 }
 
 header nav li:nth-of-type(1)::before { content: "\f005"; }
@@ -115,9 +114,9 @@ div.weblog-title a:visited {
   text-decoration: none;
 }
 .weblog-title img {
-  height: 1em;
+  height: 3em;
   padding-right: 0.5em;
-  vertical-align: -0.1em;
+  vertical-align: -1.1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
