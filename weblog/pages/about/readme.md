@@ -11,14 +11,16 @@ Location: /about
   <img id="profile-picture" alt="Michael Burkhardt" src="https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/mb-2021%20(300).jpg" />
 </div>
 
-Hi! I am Michael and I live in Columbus, Ohio. I’ve been tinkering with computers since the early 1980's. My earliest experience was entering BASIC programs on the [Commodore VIC-20](https://oldcomputers.net/vic20.html) from code listings printed in books and [magazines](https://www.vintage-computer.com/publications.php?compute). The oldest *surviving* specimen of that early work is a [horse race](https://www.youtube.com/watch?v=ci7r2rHbNiQ) program I co-wrote in Pascal in 12th grade. If you think running k-folds cross validation is slow, you should see what it was like to [compile Pascal on the Apple IIe](https://www.youtube.com/watch?v=2AawRLA25og) in 1989! FWIW, I’ve never actually worked with [punch cards](https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/card.jpg). These days I work as a cloud data architect by day. To see what I’ve been up to lately, check out my [now page](https://mihobu.monkeywalk.com/now) or my [weblog](https://mb.monkeywalk.com).
+Hi! I’ve lived in the Buckeye State my entire life so far, and Columbus is my home town.
 
-## My Interests
+I love to travel. There are so many wonderful places that I still haven’t seen, but I’m working on it. My hobbies include [photography](https://www.flickr.com/people/mihobu/), [Amateur Radio](https://qrz.com/db/W8MHB), and crochet. I post about my varied interests here on my blog from time to time. You can [subscribe here](https://mb.monkeywalk.com/rss.xml), but only if you want to.
 
-My favorite things are traveling and [photography](https://www.flickr.com/people/mihobu/), which generally go hand in hand. As always, I’m behind on posting my most recent travel photos. I’ve had my [Amateur Radio](https://qrz.com/db/W8MHB) license since I was 12 years old. After quite a few years of inactivity, I picked up the hobby again last year and it’s been just as much fun as I remember.
+Computers have been part of my life since the early 1980’s, when I started entering BASIC programs on the [Commodore VIC-20](https://oldcomputers.net/vic20.html) from code listings printed in books and [magazines](https://www.vintage-computer.com/publications.php?compute). The oldest *surviving* specimen of my early work is a [horse race](https://www.youtube.com/watch?v=ci7r2rHbNiQ) program I co-wrote with a classmate in 12th grade. It was written in Pascal on the Apple IIe, and [compiling it was slow](https://www.youtube.com/watch?v=2AawRLA25og)!
 
-In the warmer months, you can find me out on my bicycle quite a lot, although Columbus isn’t the most bike-friendly place in the world. I also like to hike and kayak occasionally, and my wife tells me that stand-up paddling is in my future too.
+![punch cards](https://mihobu.github.io/mihobu.omg.lol/weblog/pages/about/card.jpg)
 
-I gave up Facebook, Instagram, and Twitter, but you can find me on the friendlier alternatives [Mastodon](https://social.lol/@mihobu) and [Reddit](https://reddit.com/user/mihobu).
+*I have never actually used one of these but it is real and I still have it.*
+
+I don’t go in too heavily on social media any more since *feeds* have taken over and made using Facebook, Instagram, and Twitter a miserable experience. But you can find me in the friendlier confines of [Mastodon](https://social.lol/@mihobu) and [Reddit](https://reddit.com/user/mihobu).
 
 
