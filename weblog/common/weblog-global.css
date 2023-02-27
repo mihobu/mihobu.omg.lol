@@ -84,10 +84,12 @@ header nav li::before {
   color: var(--mb-h1-color);
 }
 
-header nav li:nth-of-type(1)::before { content: "\f005"; }
-header nav li:nth-of-type(2)::before { content: "\f187"; }
-header nav li:nth-of-type(3)::before { content: "\f019"; }
-header nav li:nth-of-type(4)::before { content: "\f007"; }
+header nav li:nth-of-type(1)::before { content: "\f015"; } /* Home      - house */
+header nav li:nth-of-type(2)::before { content: "\f005"; } /* Latest    - star */
+header nav li:nth-of-type(3)::before { content: "\f187"; } /* Archive   - box-archive */
+header nav li:nth-of-type(4)::before { content: "\f019"; } /* Downloads - download */
+header nav li:nth-of-type(5)::before { content: "\f007"; } /* About Me  - user */
+header nav li:nth-of-type(6)::before { content: "\f017"; } /* Now       - clock */
 
 header nav li a {
   display: inline-block;

@@ -13,7 +13,7 @@ Canonical domain: mb.monkeywalk.com
 // General config stuff
 // =========================================
 Separator:  - 
-Navigation: [Latest](/), /archive, /downloads, /about
+Navigation: [Home](https://mihobu.monkeywalk.com/), [Latest](/), /archive, /downloads, /about, [Now](https://mihobu.monkeywalk.com/now/)
 
 // =========================================
 // Time stuff

@@ -31,10 +31,6 @@ Title: Page Template
     </aside>
   </main>
 
-  <footer>
-    <p><a href="https://mihobu.monkeywalk.com/">HOME</a> ☆ <a href="https://mihobu.monkeywalk.com/now">NOW</a></p>
-  </footer>
-
 </body>
 
 </html>
