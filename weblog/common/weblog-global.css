@@ -74,6 +74,7 @@ header nav ul {
 
 header nav li {
   display: inline-block;
+  font-size: 100%;
 }
 
 header nav li::before {
