@@ -32,7 +32,7 @@ Title: Page Template
   </main>
 
   <footer>
-    <p><a href="https://mihobu.monkeywalk.com/">all things mihobu</a> / <a href="https://mihobu.monkeywalk.com/now">now</a></p>
+    <p><a href="https://mihobu.monkeywalk.com/">Home</a> • <a href="https://mihobu.monkeywalk.com/now">/Now</a> • <a href="https://mb.monkeywalk.com/">Blog</a></p>
   </footer>
 
 </body>
