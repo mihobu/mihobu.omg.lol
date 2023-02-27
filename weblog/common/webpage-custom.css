@@ -7,6 +7,9 @@
   --mb-main-bg-color: #E0E8EF;
   --mb-main-fg-color: #444444;
   --mb-icon-color: hsl(40,50%,50%);
+  --mb-icon-listening: hsl(130,50%,50%);
+  --mb-icon-reading: hsl(220,50%,50%);
+  --mb-icon-watching: hsl(310,50%,50%);
 }
 main { background-color: var(--mb-main-bg-color); }
 body {
@@ -86,7 +89,7 @@ i.fa-apple,
 i.fa-microphone,
 i.fa-microphone-lines,
 i.fa-podcast {
-  color: hsl(130,50%,50%);
+  color: var(--mb-icon-listening);
 }
 
 /* READING */
@@ -94,7 +97,7 @@ i.fa-book-open-reader,
 i.fa-book,
 i.fa-book-open,
 i.fa-book-atlas {
-  color: hsl(220,50%,50%);
+  color: var(--mb-icon-reading);
 }
 
 /* WATCHING */
@@ -105,7 +108,7 @@ i.fa-baseball,
 i.fa-basketball,
 i.fa-football,
 i.fa-pied-piper-pp { 
-  color: hsl(310,50%,50%);
+  color: var(--mb-icon-watching);
 }
 
 /* ONE COLOR FOR ALL ICONS ON PROFILE PAGE */
