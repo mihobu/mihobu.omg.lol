@@ -107,7 +107,11 @@ i.fa-futbol,
 i.fa-baseball,
 i.fa-basketball,
 i.fa-football,
-i.fa-pied-piper-pp { 
+i.fa-pied-piper-pp,
+i.fa-pied-piper-hat,
+i.fa-square-piep-piper,
+i.fa-pied-piper-alt
+{ 
   color: var(--mb-icon-watching);
 }
 
