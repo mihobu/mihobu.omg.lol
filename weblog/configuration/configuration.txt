@@ -7,13 +7,13 @@
 Weblog title: Michael Burkhardt’s Weblog
 Weblog description: Michael Burkhardt’s Weblog
 Author: Michael Burkhardt
-Canonical domain: mb.monkeywalk.com
+Canonical domain: blog.mihobu.monkeywalk.com
 
 // =========================================
 // General config stuff
 // =========================================
 Separator:  - 
-Navigation: [Latest](/), /archive, /downloads, /about, [Home](https://mihobu.monkeywalk.com/), [Now](https://mihobu.monkeywalk.com/now/)
+Navigation: [Latest](/), /archive, /downloads, /about, [Home](https://home.mihobu.monkeywalk.com/), [Now](https://now.mihobu.monkeywalk.com/)
 
 // =========================================
 // Time stuff
