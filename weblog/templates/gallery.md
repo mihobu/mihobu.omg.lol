@@ -91,7 +91,7 @@ div.gallery img:hover {
 <body>
 
   <header>
-    <div class="weblog-title"><a href="/"><img src="https://mihobu.github.io/mihobu.omg.lol/weblog/common/mb-roundel.png" />{weblog-title}</a></div>
+    <div class="weblog-title"><a href="/"><img src="https://cdn.some.pics/mihobu/6419d6407ddfe.png" />{weblog-title}</a></div>
 {navigation}
   </header>
 
