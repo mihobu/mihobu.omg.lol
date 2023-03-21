@@ -1,0 +1,295 @@
+Type: file
+Content-Type: text/css
+Title: Weblog Global Style Sheet
+Location: /weblog-global.css
+
+/* IMPORTS */
+@import url('https://static.omg.lol/type/fontawesome-free/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* MY CUSTOM COLORS */
+:root {
+  --mb-link-color: #008FC6;
+  --mb-active-link-color: #444444;
+  --prami-pink: #ED72AB;
+  --mb-body-bg-color: #C0C8CF;
+  --mb-main-bg-color: #E0E8EF;
+  --mb-main-fg-color: #444444;
+  --mb-icon-color: #9A00C6;
+  --mb-nav-icon-color: #888888;
+  --mb-h1-color: #444444;
+  --mb-h2-color: var(--mb-main-fg-color);
+  --mb-tag-color: #008FC6;
+  --mb-code-fg: #66FF66;
+  --mb-code-bg: #444444;
+}
+
+/* =============================================================
+** IN THE BEGINING
+** ============================================================= */
+
+ * { box-sizing: border-box; }
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 120%;
+  color: var(--mb-main-fg-color);
+  background: var(--mb-body-bg-color);
+  padding: 2em;
+}
+
+header {
+  margin-top: 0;
+  padding: 0 1em;
+}
+
+main {
+  border: none;
+  padding: 1em;
+  text-align: left;
+  background-color: var(--mb-main-bg-color);
+}
+
+footer {
+  padding: 0 1em;
+}
+
+header,
+main,
+footer {
+  max-width: 45em;
+  margin: 1em auto;
+}
+
+article {
+  margin-bottom: 2em;
+}
+
+/* =============================================================
+** HEADERS AND NAVIGATION
+** ============================================================= */
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav li {
+  display: inline-block;
+  font-size: 100%;
+}
+
+header nav li::before {
+  display: inline-block;
+  font: var(--fa-font-solid);
+  padding-right: 0.5em;
+  text-rendering: optimizelegibility;
+  color: var(--mb-h1-color);
+}
+
+header nav li:nth-of-type(1)::before { content: "\f005"; } /* Latest    - star */
+header nav li:nth-of-type(2)::before { content: "\f187"; } /* Archive   - box-archive */
+header nav li:nth-of-type(3)::before { content: "\f019"; } /* Downloads - download */
+header nav li:nth-of-type(4)::before { content: "\f007"; } /* About Me  - user */
+header nav li:nth-of-type(5)::before { content: "\f015"; } /* Home      - house */
+header nav li:nth-of-type(6)::before { content: "\f70c"; } /* Now       - person-running */
+
+header nav li a {
+  display: inline-block;
+  margin-right: 1em;
+  text-decoration: none;
+}
+
+/* =============================================================
+** TITLE AND HEADINGS
+** ============================================================= */
+
+div.weblog-title {
+  font-size: 1.6em;
+  margin: 0 0 1rem 0;
+  padding-right: 0.5em;
+  font-weight: 700;
+}
+div.weblog-title a:link,
+div.weblog-title a:hover,
+div.weblog-title a:active,
+div.weblog-title a:visited {
+  color: var(--mb-h1-color);
+  text-decoration: none;
+}
+.weblog-title img {
+  height: 3em;
+  padding-right: 0.5em;
+  vertical-align: -1.1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem 0;
+  padding-right: 0.5em;
+}
+
+h1 {
+  font-size: 1.4em;
+  color: var(--mb-h1-color);
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: var(--mb-h2-color);
+}
+
+h3 {
+  font-size: 1.1em;
+  color: var(--mb-h2-color);
+  margin: 1rem 0;
+  padding-right: 0.5em;
+}
+
+/* =============================================================
+** TEXT STYLES
+** ============================================================= */
+
+p,
+li {
+  line-height: 160%;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+footer p {
+  margin-top: 5em;
+  font-size: 90%;
+  text-align: center;
+}
+
+/* =============================================================
+** TEXT LINKS
+** ============================================================= */
+
+a:link, a:visited,
+#pronouns a:link, #pronouns a:visited
+{
+  color: var(--mb-link-color);
+  text-decoration: none;
+  border: none;
+}
+
+a:hover,a:active,
+#pronouns a:hover, #pronouns a:active
+{
+  color: var(--mb-active-link-color);
+  text-decoration: none;
+  border: none;
+}
+
+/* =============================================================
+** RULES, CODE BLOCKS, AND IMAGES
+** ============================================================= */
+
+hr {
+  border-width: 1px 0 0 0;
+  border-color: var(--mb-body-bg-color);
+  border-style: solid;
+  margin: 2em 0;
+}
+
+code {
+  border: none;
+  background-color: #D0D8DF;
+  color: #006600;
+  padding: 0.2em 0.3em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-radius: 0.25em;
+}
+
+pre code {
+  background-color: var(--mb-code-bg);
+  color: var(--mb-code-fg);
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
+  font-style: normal;
+  border-radius: 0.75em;
+  display: inline-block;
+  padding: 1em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+main img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 0.75em;
+}
+
+/* =============================================================
+** POST TAGS AND POST INFO
+** ============================================================= */
+
+.post-info,
+.post-tags {
+  font-size: 85%;
+  color: var(--mb-main-fg-color);
+  text-align: right;
+}
+
+.post-info i,
+.post-tags i,
+.post-summary i {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.tag {
+  background: var(--mb-tag-color);
+  color: #FFFFFF !important;
+  padding: .3em .4em;
+  margin: .8em 0 0 .4em;
+  border-radius: .5em;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+/* =============================================================
+** TABLES
+** ============================================================= */
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+td,
+th {
+  padding: .4em;
+  text-align: left;
+}
+
+td { border-top: 1px solid var(--mb-body-bg-color); }
+
+/* =============================================================
+** PROFILE PIC
+** ============================================================= */
+
+#profile-picture-container {
+  text-align: center;
+}
+
+#profile-picture {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--mb-body-bg-color);
+  border-width: 10px;
+  width: 200px;
+  height: 200px;
+}
