@@ -12,7 +12,7 @@ Title: Page Template
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.cache.lol/profiles/themes/css/base.css" rel="stylesheet">
-  <link href="https://mihobu.github.io/mihobu.omg.lol/weblog/common/weblog-global.css" rel="stylesheet">
+  <link href="https://blog.mihobu.monkeywalk.com/weblog-global.css" rel="stylesheet">
 </head>
 
 <body>

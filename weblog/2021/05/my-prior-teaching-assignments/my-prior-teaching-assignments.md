@@ -20,4 +20,4 @@ In addition to my work in industry, I also work occasionally as an adjunct lectu
 |Sp13|CSE 2111|Modeling and Problem Solving with Spreadsheets and Databases|
 |Au12|CSE 3903|Design, Development, and Documentation of System Software|
 
-![old osu logo](https://mihobu.github.io/mihobu.omg.lol/weblog/2021/05/my-prior-teaching-assignments/old-osu-logo-300.png)
+![old osu logo](https://cdn.some.pics/mihobu/6419d4b613522.png)

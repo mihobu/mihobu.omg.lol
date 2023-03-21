@@ -8,7 +8,7 @@ Stub: r-script-in-processing
 
 Starting with a basic example provided by AWS, I've made a few minor changes.
 
-![img1](https://mihobu.github.io/mihobu.omg.lol/weblog/2022/01/r-script-in-processing/image-01.png)
+![img1](https://cdn.some.pics/mihobu/6419d4ecd90b1.png)
 
 When I’m learning new things, I almost always take a very deliberate (read: slow) cumulative approach. I start with simple, even trivial, examples and build my understanding one concept at a time. It's just how my brain works.
 I’ve been exploring [SageMaker Processing](https://mb.monkeywalk.com/2022/01/what-is-amazon-sagemaker-processing) lately, specifically the ability to run R scripts as part of a data science workflow. AWS provides a lot of excellent examples in their massive [Amazon SageMaker Examples](https://github.com/aws/amazon-sagemaker-examples) GitHub repo, so that’s where I started.
@@ -23,7 +23,7 @@ So, to keep myself sane and to prevent having dozens of folders in S3 with dupli
 
 You can find [my modified copy on GitHub](https://github.com/mihobu/sagemaker-processing-examples/blob/main/basic-r-example/r_in_sagemaker_processing.ipynb).
 
-![img2](https://mihobu.github.io/mihobu.omg.lol/weblog/2022/01/r-script-in-processing/image-02.png)
+![img2](https://cdn.some.pics/mihobu/6419d50b477ac.png)
 
 ## Stay tuned
 
