@@ -11,7 +11,7 @@ Starting with a basic example provided by AWS, I've made a few minor changes.
 ![img1](https://cdn.some.pics/mihobu/6419d4ecd90b1.png)
 
 When I’m learning new things, I almost always take a very deliberate (read: slow) cumulative approach. I start with simple, even trivial, examples and build my understanding one concept at a time. It's just how my brain works.
-I’ve been exploring [SageMaker Processing](https://mb.monkeywalk.com/2022/01/what-is-amazon-sagemaker-processing) lately, specifically the ability to run R scripts as part of a data science workflow. AWS provides a lot of excellent examples in their massive [Amazon SageMaker Examples](https://github.com/aws/amazon-sagemaker-examples) GitHub repo, so that’s where I started.
+I’ve been exploring [SageMaker Processing](https://blog.mihobu.monkeywalk.com/2022/01/what-is-amazon-sagemaker-processing) lately, specifically the ability to run R scripts as part of a data science workflow. AWS provides a lot of excellent examples in their massive [Amazon SageMaker Examples](https://github.com/aws/amazon-sagemaker-examples) GitHub repo, so that’s where I started.
 
 The “[Using R in SageMaker Processing](https://github.com/aws/amazon-sagemaker-examples/blob/master/r_examples/r_in_sagemaker_processing/r_in_sagemaker_processing.ipynb)” example notebook shows how to build a Docker container with R and then create and run a Processing job using that container. It loads a small dataset and (using the Tidyverse packages) performs some data aggregation and generates a bar chart. The bar chart and a copy of the aggregated data are then stored on S3.
 
