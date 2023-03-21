@@ -9,11 +9,11 @@ My quest for an all-band HF antenna that is both reasonably quiet and performant
 [PAL-4010OCF 40m–10m OCF Dipole](https://4mw.us/ocf)
 from Palomar Engineers. The legs are roughly 18% and 82%, and the total length is about 65 feet. I knew I needed to support the 4:1 balun so I threw an extra line in the tree so that I'd end up with a flat top configuration.
 
-![img01](https://mihobu.github.io/mihobu.omg.lol/weblog/2022/08/antenna-update-4/image-01.jpg)
+![img01](https://cdn.some.pics/mihobu/641a047748521.jpg)
 
 This worked and I was able to tune and make contacts on several bands. However, I was not too happy that there was a lot of strain on the long leg. So I did a reset and hoisted the balun up close to the tree and sloped the short end out away for more of an interted-L shape.
 
-![img02](https://mihobu.github.io/mihobu.omg.lol/weblog/2022/08/antenna-update-4/image-02.jpg)
+![img02](https://cdn.some.pics/mihobu/641a048d21660.jpg)
 
 This also has the added benefit of pulling the feedline in closer to the tree, making the whole installation a little less conspicuous. With the antenna reconfigured, I set about testing.
 

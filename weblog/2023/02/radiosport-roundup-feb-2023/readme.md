@@ -10,8 +10,8 @@ Template: Gallery Template
 
 <div class="gallery">
 
-<img class="modal-trigger" src="https://mihobu.github.io/mihobu.omg.lol/weblog/2023/02/radiosport-roundup-feb-2023/erc-wdus-750-1810-0206.jpg" alt="Worked 750 US Stations" />
-<img class="modal-trigger" src="https://mihobu.github.io/mihobu.omg.lol/weblog/2023/02/radiosport-roundup-feb-2023/ft8dmc-wussa-800-2419-0208.jpg" alt="Worked 800 US Stations" />
+<img class="modal-trigger" src="https://cdn.some.pics/mihobu/641a05dd8ca1a.jpg" alt="Worked 750 US Stations" />
+<img class="modal-trigger" src="https://cdn.some.pics/mihobu/641a05f57bab5.jpg" alt="Worked 800 US Stations" />
 
 </div>
 

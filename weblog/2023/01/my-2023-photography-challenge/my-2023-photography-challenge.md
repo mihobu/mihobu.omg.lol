@@ -5,7 +5,7 @@ Tags: Photography
 
 # My 2023 Photography Challenge
 
-![img](https://mihobu.github.io/mihobu.omg.lol/weblog/2023/01/my-2023-photography-challenge/image-01.jpg)
+![img](https://cdn.some.pics/mihobu/641a058c2117e.jpg)
 
 I’ve decided to start a [52 weeks of photography 2023](https://www.clondon.me/blog/52-2023) challenge, which is being led by Prague-based photographer Chelsea London. The goal is to take at least one new photograph per week throughout the year. I’m trying to make photography more of a habit, so this challenge seems like a nice fit.
 

@@ -6,7 +6,7 @@ Tags: AI
 
 # ChatGPT Poetry Corner
 
-![ChatGPT the Poet](https://mihobu.github.io/mihobu.omg.lol/weblog/2023/02/chatgpt-poetry-corner/FB7C0692-E419-4B4F-BE2A-6367A2D6D7FE.jpeg)
+![ChatGPT the Poet](https://cdn.some.pics/mihobu/641a05b7d1b66.jpg)
 
 I asked [ChatGPT](https://openai.com/blog/chatgpt/) to write a poem about automation using AWS Lambda and YAML, and here's what it produced:
 

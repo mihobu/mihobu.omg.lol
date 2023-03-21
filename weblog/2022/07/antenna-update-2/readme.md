@@ -15,7 +15,7 @@ So, the antenna appears to be functioning reasonably well.
 
 ## However
 
-![img1](https://mihobu.github.io/mihobu.omg.lol/weblog/2022/07/antenna-update-2/image-01.jpg)
+![img1](https://cdn.some.pics/mihobu/641a050aa01bb.jpg)
 
 The noise floor is REALLY HIGH, especially on 20, 40, and 80. I'm not sure if this is because the noise is louder at the new QTH or because the long wire is inherently noisy. I suspect the latter. I think I'll toss a 40m dipole up there temporarily to get a baseline.
 
