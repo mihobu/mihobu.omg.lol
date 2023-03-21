@@ -1,3 +1,8 @@
+Type: file
+Content-Type: text/css
+Title: Weblog Global Style Sheet
+Location: /weblog-global.css
+
 /* IMPORTS */
 @import url('https://static.omg.lol/type/fontawesome-free/css/all.css');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
