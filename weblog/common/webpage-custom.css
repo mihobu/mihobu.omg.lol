@@ -1,15 +1,21 @@
+Type: file
+Content-Type: text/css
+Title: Webpage Custom Stylesheet
+Location: /webpage-custom.css
+
 /* START CUSTOM CSS */
 @import url('https://use.typekit.net/xob4bhk.css');
 :root {
-  --mb-link-color: #008FC6;
+  --mb-link-color: hsl(197,100%,39%);
   --prami-pink: #ED72AB;
   --mb-body-bg-color: #C0C8CF;
   --mb-main-bg-color: #E0E8EF;
   --mb-main-fg-color: #444444;
-  --mb-icon-color: hsl(40,50%,50%);
-  --mb-icon-listening: hsl(130,50%,50%);
-  --mb-icon-reading: hsl(220,50%,50%);
-  --mb-icon-watching: hsl(310,50%,50%);
+  --mb-icon-color: hsl(0,0%,27%);
+  --mb-icon-listening: hsl(340,75%,40%);
+  --mb-icon-reading: hsl(50,75%,40%);
+  --mb-icon-watching: hsl(240,75%,40%);
+  --mb-icon-tinkering: hsl(100,75%,40%);
 }
 main { background-color: var(--mb-main-bg-color); }
 body {
@@ -115,10 +121,15 @@ i.fa-pied-piper-alt
   color: var(--mb-icon-watching);
 }
 
+i.fa-screwdriver-wrench
+{ 
+  color: var(--mb-icon-tinkering);
+}
+
 /* ONE COLOR FOR ALL ICONS ON PROFILE PAGE */
 #profile-items i.fa-solid,
 #profile-items i.fa-brands,
 #profile-items i.omg-icon {
-  color: hsl(220,50%,50%);
+  color: var(--mb-icon-color);
 }
 
