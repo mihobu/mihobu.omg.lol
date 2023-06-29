@@ -1,1 +1,1 @@
-This repo contains **static** content for all of my omg.lol services, including the web page, now page, status log, and weblog.
+This repo contains content and code related to my `omg.lol` profile page, now page, and weblog.
