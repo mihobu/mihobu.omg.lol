@@ -18,7 +18,7 @@ def lambda_handler(event, context):
     # OMG.LOL API CONFIG
     omg_now_url = 'https://api.omg.lol/address/mihobu/now'
     omg_paste_url = f'https://api.omg.lol/address/mihobu/weblog/entry/{entry}'
-    omg_api_key = '53d851d9ea975216b986af12ffc4a875'
+    omg_api_key = os.environ['OMG_API_KEY']
     omg_headers = { 'Authorization': f'Bearer {omg_api_key}' }
     
     # GET DYNAMODB CLIENT
@@ -59,20 +59,30 @@ Status: draft
     italpat = re.compile("^(.*)\*([^\*]+)\*(.*)$") # for converting italics markdown
     outputstr += '<ul class="fa-ul">'
     for item in content:
-        match = re.search(italpat, item['title'])
-        if match:
-            newtitle = match.group(1) + "<i>" + match.group(2) + "</i>" + match.group(3)
+        if 'icon' in item.keys():
+            the_icon = item['icon']
         else:
-            newtitle = item['title']
-        if 'icon' not in item.keys():
-            item['icon'] = 'otter'
-        outputstr += f'''<li><span class="fa-li"><i class="fa-solid fa-{item['icon']}"></i></span>'''
+            the_icon += "otter"
+        outputstr += f'''<li><span class="fa-li"><i class="fa-solid fa-{the_icon}"></i></span>'''
         if 'url' in item.keys():
-            outputstr += f'''<a href="{item['url']}">{newtitle}</a>'''
+            outputstr += f'''<a href="{item['url']}">{item['title']}</a>'''
         else:
-            outputstr += newtitle
-        outputstr += '</li>\n'
-    
+            outputstr += item['title']
+        if 'last-episode' in item.keys():
+            outputstr += f''' (Ep. {item['last-episode']})'''
+        if 'progress' in item.keys():
+            pr = item['progress']
+            mod_date = datetime.strptime(item['modified'], '%Y%m%d-%H%M%S')
+            ttts = mod_date.strftime('%Y-%m-%d')
+            outputstr += f''' <div class="progress-bar-container" style="--pct:{pr}%;" data-tooltip="{pr}% on {ttts}"></div>'''
+        if 'rating' in item.keys():
+            rt = int(item['rating'])
+            outputstr += ' <div class="ratings-container"><span class="star-on">'
+            outputstr += '★' * rt
+            outputstr += '</span><span class="star-off">'
+            outputstr += '★' * (5-rt)
+            outputstr += '</span></div>'
+        outputstr += "</li>\n"
     outputstr += '</ul>'
 
     # GET A CONNECTION POOL
