@@ -63,6 +63,12 @@ def get_value(test_item, k):
     return test_item[k] if k in test_item.keys() else None
 
 # =====================================================================
+# RETURN THE VALUE FROM A DICT IN A GIVEN LIST IF THE NAME MATCHES
+# =====================================================================
+def get_value_from(test_list, name):
+    return next((item['Value'] for item in test_list if item['Name'] == name), None)
+
+# =====================================================================
 # Remove non-alphabetic characters from attribute names
 # =====================================================================
 def conv_attr_str(instr):
@@ -71,12 +77,24 @@ def conv_attr_str(instr):
     return regex.sub('', instr)
 
 def lambda_handler(event, context):
+
+    #--
+    #-- GET PARAMETERS FROM PARAMETER STORE
+    #--
+    ssm_client = boto3.client('ssm')
+    parameters = [
+      'OMG_API_KEY',
+      'TRAKT_HISTORY_INTERVAL'
+    ]
+    resp_ssm = ssm_client.get_parameters(Names=parameters)
+    omg_api_key = get_value_from(resp_ssm['Parameters'], 'OMG_API_KEY')
+    display_days = int(get_value_from(resp_ssm['Parameters'], 'TRAKT_HISTORY_INTERVAL'))
+
     # =====================================================================
     # CONFIGURATION
     # =====================================================================
     
     # GENERAL CONFIGURATION
-    display_days = 7
     content_version = '7'
     type_names = {
         "L": "Listening",
@@ -87,7 +105,7 @@ def lambda_handler(event, context):
     global req_attrs
     req_attrs = ['title', 'type']
     global opt_attrs 
-    opt_attrs = ['id', 'icon', 'url', 'progress', 'last-episode', 'delete', 'rating', 'note']
+    opt_attrs = ['id', 'icon', 'url', 'progress', 'last-episode', 'delete', 'rating', 'note', 'trakt_id']
     
     # DYNAMO DB CONFIG
     table_name = f"now-content-v{content_version}"
@@ -109,7 +127,7 @@ def lambda_handler(event, context):
     ddb_client = boto3.client('dynamodb')
     ddb_resource = boto3.resource('dynamodb')
     ddb_table = ddb_resource.Table(table_name)
-    
+
     # =====================================================================
     # LOAD THE USER'S YAML FILE FROM PASTEBIN
     # =====================================================================
@@ -195,11 +213,28 @@ def lambda_handler(event, context):
                 upd = False
                 updated_item = {}
                 updated_item['id'] = item_id
+
+                # Check for attributes in pastebin (input_item) that are not in DynamoDB (recent_item)
+                # If there are *differences* pastebin will take precedence
                 for k in input_item.keys():
+                    if k in ['modified', 'created']:
+                        # Ignore modified and created
+                        continue
                     if (k not in recent_item) or (recent_item[k] != input_item[k]):
                         print(f"* Adding or updating attribute ({k}) for id={item_id}")
                         upd = True
                         updated_item[k] = str(input_item[k])
+
+                # Check for attributes in DynamoDB (recent_item) that are not in pastebin (input_item)
+                for k in recent_item.keys():
+                    if k in ['modified', 'created']:
+                        # Ignore modified and created
+                        continue
+                    if (k not in input_item):
+                        print(f"* Adding or updating attribute ({k}) for id={item_id}")
+                        upd = True
+                        updated_item[k] = str(recent_item[k])
+
                 if upd:
                     updated_item['modified'] = datetime.now().strftime('%Y%m%d-%H%M%S')
                     updated_items.append(deepcopy(updated_item))
@@ -215,7 +250,7 @@ def lambda_handler(event, context):
                 Key={"id": {'S': item_id}}
             )
     else:
-        print("* No items to update")
+        print("* No items to delete")
 
     # =====================================================================
     # INSERT NEW ITEMS IN DYNAMODB
@@ -345,7 +380,9 @@ def lambda_handler(event, context):
 
 ## What I’m Doing Now
 
-This is what I’ve been into lately.<br/>I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
+This is what I’ve been into lately.
+
+I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
 
 <script src="https://status.lol/mihobu.js?time&fluent&pretty&link"></script>
 
@@ -385,7 +422,7 @@ This is what I’ve been into lately.<br/>I also post a [weekly summary](https:/
 
     now += '''
 
-<div class="nowlol"><a href="https://mihobu.lol/">HELLO</a> ⎮ <span>NOW</span> ⎮ <a href="https://blog.mihobu.lol/">BLOG</a></div>
+<div class="nowlol"><a href="https://hello.mihobu.lol/">HELLO</a> ⎮ <span>NOW</span> ⎮ <a href="https://blog.mihobu.lol/">BLOG</a></div>
 
 {last-updated}
 
