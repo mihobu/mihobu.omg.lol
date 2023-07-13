@@ -90,9 +90,9 @@ def lambda_handler(event, context):
     omg_api_key = get_value_from(resp_ssm['Parameters'], 'OMG_API_KEY')
     display_days = int(get_value_from(resp_ssm['Parameters'], 'TRAKT_HISTORY_INTERVAL'))
 
-    # =====================================================================
-    # CONFIGURATION
-    # =====================================================================
+    #--
+    #-- CONFIGURATION
+    #--
     
     # GENERAL CONFIGURATION
     content_version = '7'
@@ -117,9 +117,6 @@ def lambda_handler(event, context):
     omg_headers = { 'Authorization': f'Bearer {omg_api_key}' }
     yaml_url = f"https://mihobu.paste.lol/media{content_version}.yaml/raw"
     
-    # FORCE UPDATE?
-    force = True if (('force-update' in event.keys()) and (event['force-update']=="true")) else False
-    
     # GET A CONNECTION POOL
     http = urllib3.PoolManager()
     
@@ -128,9 +125,9 @@ def lambda_handler(event, context):
     ddb_resource = boto3.resource('dynamodb')
     ddb_table = ddb_resource.Table(table_name)
 
-    # =====================================================================
-    # LOAD THE USER'S YAML FILE FROM PASTEBIN
-    # =====================================================================
+    #--
+    #-- LOAD THE USER'S YAML FILE FROM PASTEBIN
+    #--
     resp = http.request('GET', yaml_url)
     input_items = yaml.load(resp.data, Loader=yaml.loader.BaseLoader) # force all to string
     if input_items is None:
@@ -138,9 +135,9 @@ def lambda_handler(event, context):
         input_items = []
     print("* Loaded {} input items from pastebin".format(len(input_items)))
 
-    # =====================================================================
-    # GET "RECENT" ITEMS FROM DYNAMODB
-    # =====================================================================
+    #--
+    #-- GET "RECENT" ITEMS FROM DYNAMODB
+    #--
     oneweekago = datetime.now() - timedelta(days=display_days)
     owa_str = oneweekago.strftime('%Y%m%d-000000')
     resp = ddb_table.scan(
@@ -154,23 +151,17 @@ def lambda_handler(event, context):
     recent_items = ddbjson.loads(recent_items_d)
     print("* Loaded {} recent items from DynamoDB".format(len(recent_items)))
     
-    # =====================================================================
-    # CREATE LISTS FOR NEW, UPDATED, AND INVALID ITEMS
-    # =====================================================================
+    #--
+    #-- CREATE LISTS FOR NEW, UPDATED, AND INVALID ITEMS
+    #--
+    deleted_item_ids = [] # LIST OF ITEM ID STRINGS ONLY
+    updated_items    = [] # LIST OF UPDATED ITEMS, INCL. MODIFIED ATTRS ONLY
+    new_items        = [] # LIST OF COMPLETE ITEMS
+    invalid_items    = [] # LIST OF COMPLETE ITEMS
     
-    # LISTS OF ITEM ID STRINGS ONLY
-    deleted_item_ids = []
-    
-    # THIS IS A LIST OF *PARTIAL* ITEMS -- ONLY THE ID AND MODIFIED ATTRIBUTES ARE INCLUDED
-    updated_items = []
-    
-    # LIST OF COMPLETE ITEMS
-    new_items     = []
-    invalid_items = []
-    
-    # =====================================================================
-    # COMPARE INPUT ITEMS TO RECENT ITEMS
-    # =====================================================================
+    #--
+    #-- COMPARE INPUT ITEMS TO RECENT ITEMS
+    #--
     for input_item in input_items:
 
         # Validate the item
@@ -205,7 +196,7 @@ def lambda_handler(event, context):
             if recent_item is None:
                 # This item is "old" and needs to be aged off
                 print(f"* Aging off item: {input_item['title']}")
-                force = True
+                #ewrite = True
             else:
                 # This is a recent item
                 # Check for differences between input_item and recent_item
@@ -239,9 +230,9 @@ def lambda_handler(event, context):
                     updated_item['modified'] = datetime.now().strftime('%Y%m%d-%H%M%S')
                     updated_items.append(deepcopy(updated_item))
 
-    # =====================================================================
-    # DELETE ITEMS FROM DYNAMODB
-    # =====================================================================
+    #--
+    #-- DELETE ITEMS FROM DYNAMODB
+    #--
     if len(deleted_item_ids) > 0:
         for item_id in deleted_item_ids:
             print(f"* (-) Deleting item: id={item_id}")
@@ -252,9 +243,9 @@ def lambda_handler(event, context):
     else:
         print("* No items to delete")
 
-    # =====================================================================
-    # INSERT NEW ITEMS IN DYNAMODB
-    # =====================================================================
+    #--
+    #-- INSERT NEW ITEMS IN DYNAMODB
+    #--
     if len(new_items) > 0:
         for new_item in new_items:
             print(f"* Adding new item: {new_item['title']}")
@@ -263,9 +254,9 @@ def lambda_handler(event, context):
     else:
         print("* No new items to create")
 
-    # =====================================================================
-    # UPDATE ITEMS IN DYNAMODB
-    # =====================================================================
+    #--
+    #-- UPDATE ITEMS IN DYNAMODB
+    #--
     if len(updated_items) > 0:
         for updated_item in updated_items:
             item_id = updated_item['id']
@@ -303,9 +294,9 @@ def lambda_handler(event, context):
     else:
         print("* No items to update")
 
-    # =====================================================================
-    # WRITE INVALID ITEMS TO PASTEBIN
-    # =====================================================================
+    #--
+    #-- WRITE INVALID ITEMS TO PASTEBIN
+    #--
     if len(invalid_items) > 0:
         print("* Writing invalid items to pastebin")
         ts = datetime.now().strftime('%Y%m%d-%H%M%S')
@@ -323,16 +314,9 @@ def lambda_handler(event, context):
     else:
         print("* No invalid items to save")
 
-    # =====================================================================
-    # EXIT NOW IF NOTHING HAS CHANGED
-    # =====================================================================
-    if (not force) and (len(new_items) == len(updated_items) == len(deleted_item_ids) == len(invalid_items) == 0):
-        print("* No additions, updates, deletions, or invalid items to save. Exiting.")
-        return None
-
-    # =====================================================================
-    # RELOAD RECENT ITEMS FROM DYNAMODB
-    # =====================================================================
+    #--
+    #-- NOW DYNAMODB TABLE HAS BEEN UPDATED, RELOAD RECENT ITEMS FROM DYNAMODB
+    #--
     resp = ddb_table.scan(
         TableName=table_name,
         Select='ALL_ATTRIBUTES',
@@ -344,9 +328,9 @@ def lambda_handler(event, context):
     recent_items = ddbjson.loads(recent_items_d)
     print("* Loaded {} recent items from DynamoDB".format(len(recent_items)))
 
-    # =====================================================================
-    # OVERWRITE THE mediaXX.yaml PASTE
-    # =====================================================================
+    #--
+    #-- ALWAYS OVERWRITE THE mediaXX.yaml PASTE
+    #--
     print("* Writing recent items back to pastebin")
     ts = datetime.now().strftime('%Y%m%d-%H%M%S')
     opt_attrs_str = ', '.join(opt_attrs)
@@ -369,9 +353,9 @@ def lambda_handler(event, context):
     }
     resp_med = http.request('POST', omg_paste_url, body=json.dumps(payload_med), headers=omg_headers)
 
-    # =====================================================================
-    # CONSTRUCT AND UPDATE THE NOW PAGE CONTENT
-    # =====================================================================
+    #--
+    #-- CONSTRUCT AND UPDATE THE NOW PAGE CONTENT
+    #--
     print("* Writing NOW content")
     now = '''
 {profile-picture}
@@ -429,6 +413,8 @@ I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
 <div style="display:none"><a rel="me" href="https://social.lol/@mihobu">Mastodon</a></div>
 
 <img id="dont-touch-image" src="https://mihobu.url.lol/profile-note" />
+
+<script src="https://tinylytics.app/embed/3uCnpsxr9keeKJvKdRxF.js" defer></script>
 '''
 
     # CALL THE OMG.LOL API TO UPDATE THE NOW PAGE CONTENTS
