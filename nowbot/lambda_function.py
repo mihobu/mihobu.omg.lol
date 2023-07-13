@@ -132,12 +132,10 @@ I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
                     ttts = mod_date.strftime('%Y-%m-%d')
                     now += f' <div class="progress-bar-container" style="--pct:{pr}%;" data-tooltip="{pr}% on {ttts}"></div>'
                 if 'rating' in now_item.keys():
-                    rt = int(now_item['rating'])
-                    now += ' <div class="ratings-container"><span class="star-on">'
-                    now += '★' * rt
-                    now += '</span><span class="star-off">'
-                    now += '★' * (5-rt)
-                    now += '</span></div>'
+                    rt = float(now_item['rating'])
+                    num_full_stars = str(int(rt))
+                    num_half_stars = "1" if (rt-int(rt)) > 0 else "0"
+                    now += f'<div class="star-rating" style="--f:{num_full_stars};--h:{num_half_stars}"></div>'
                 if 'icon' in now_item.keys():
                     now += f" {{{now_item['icon']}}}\n"
                 else:
