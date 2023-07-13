@@ -5,11 +5,7 @@
 import boto3
 import dynamodb_json as ddbjson
 import json
-import os
-import re
 import urllib3
-import uuid
-import yaml
 
 from copy import deepcopy
 from datetime import datetime, timedelta
@@ -70,7 +66,6 @@ def lambda_handler(event, context):
     
     # OMG.LOL CONFIG
     omg_now_url = 'https://api.omg.lol/address/mihobu/now'
-    omg_api_key = os.environ['OMG_API_KEY']
     omg_headers = { 'Authorization': f'Bearer {omg_api_key}' }
     
     # GET A CONNECTION POOL
