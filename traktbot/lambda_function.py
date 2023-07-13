@@ -240,7 +240,7 @@ def lambda_handler(event, context):
             # Get user's rating
             rating = get_rating(ratings, item) # int or None
             if rating is not None:
-                rating_s = str(rating/2)
+                rating_s = str(rating/2.)
                 if ('rating' not in recent_item.keys()) or (rating_s != recent_item['rating']):
                     updated_item['rating'] = rating_s
                     upd = True
@@ -293,7 +293,7 @@ def lambda_handler(event, context):
             # Get user's rating
             rating = get_rating(ratings, item) # int or None
             if rating is not None:
-                rating_s = str(rating/2)
+                rating_s = str(rating/2.)
                 new_item['rating'] = rating_s
 
             new_items.append(deepcopy(new_item))
