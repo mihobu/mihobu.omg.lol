@@ -293,7 +293,7 @@ def lambda_handler(event, context):
             # Get user's rating
             rating = get_rating(ratings, item) # int or None
             if rating is not None:
-                rating_s = str(round(rating/2))
+                rating_s = str(rating/2)
                 new_item['rating'] = rating_s
 
             new_items.append(deepcopy(new_item))
