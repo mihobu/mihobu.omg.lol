@@ -170,6 +170,9 @@ def lambda_handler(event, context):
     else:
         raise Exception("FAILED to load Trakt user history")
 
+    print("* Loaded {} items from Trakt history".format(len(history)))
+
+
     #--
     #-- GET USER RATINGS
     #--
@@ -186,6 +189,8 @@ def lambda_handler(event, context):
     ratings = []
     if resp_rtg.status == 200:
         ratings = json.loads(resp_rtg.data)
+
+    print("* Loaded {} ratings from Trakt history".format(len(ratings)))
 
     #--
     #-- GET RECENT ITEMS FROM DYNAMODB
@@ -235,7 +240,7 @@ def lambda_handler(event, context):
             # Get user's rating
             rating = get_rating(ratings, item) # int or None
             if rating is not None:
-                rating_s = str(round(rating/2))
+                rating_s = str(rating/2)
                 if ('rating' not in recent_item.keys()) or (rating_s != recent_item['rating']):
                     updated_item['rating'] = rating_s
                     upd = True
@@ -343,3 +348,17 @@ def lambda_handler(event, context):
             )
     else:
         print("* No items to update")
+
+    #--
+    #-- IF THERE WERE ANY CHANGES, TRIGGER THE NOW PAGE CONTENT GENERATOR
+    #--
+
+    if ((len(updated_items)>0) or (len(new_items)>0)):
+        print("*** Sending message to SQS queue (to trigger NOW page rebuild)")
+        # GET SQS CLIENT
+        sqs_client = boto3.client('sqs')
+
+        resp_sqs = sqs_client.send_message(
+            QueueUrl = 'https://sqs.us-east-2.amazonaws.com/400999793714/now-page-triggers',
+            MessageBody = '{}'
+        )
