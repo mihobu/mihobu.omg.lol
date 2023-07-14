@@ -113,7 +113,8 @@ I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
 
     # GET RECENT ITEMS IN EACH CATEGORY
     for typ in ["R", "W", "L", "T"]: # In display order
-        now += f"\n### {type_names[typ]}\n\n"
+        type_icon = '<img src="https://cdn.some.pics/mihobu/64b09a5b33bac.png" class="emoji">' if typ == "W" else ''
+        now += f"\n### {type_names[typ]} {type_icon}\n\n"
         now_items = sorted(filter_by_type(recent_items, typ), key=lambda x: x['modified'], reverse=True)
         if len(now_items) == 0:
             now += "- No recent items to show {otter}\n"
