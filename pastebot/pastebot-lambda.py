@@ -34,13 +34,13 @@ def validate_input_item(input_item):
             print(f"Invalid attribute ({k}) found in input item")
             is_valid = False
     # Check rating attribute (only if not blank)
-    if ('rating' in input_item.keys()) and (input_item['rating'] != ""):
-        try:
-            rt = int(input_item['rating'])
-            if rt not in range(1,6):
-                raise ValueError
-        except ValueError:
-            is_valid = False
+    #if ('rating' in input_item.keys()) and (input_item['rating'] != ""):
+    #    try:
+    #        rt = int(input_item['rating'])
+    #        if rt not in range(1,6):
+    #            raise ValueError
+    #    except ValueError:
+    #        is_valid = False
     return is_valid
 
 # =====================================================================
@@ -159,6 +159,10 @@ def lambda_handler(event, context):
             invalid_items.append(deepcopy(input_item))
             continue
     
+        # Ignore type="W"
+        if input_item['type'] == "W":
+            continue
+
         # Get the item's ID, if it exists
         item_id = get_value(input_item, 'id')
         
@@ -330,7 +334,14 @@ def lambda_handler(event, context):
 # Optional attributes: {opt_attrs_str}
 '''
 
+    item_count = 0
     for recent_item in sorted(recent_items, key=lambda x: x['modified'], reverse=True):
+        
+        # Skip "watching" items -- these come only from Trakt.tv
+        if recent_item['type'] == "W":
+            continue
+
+        item_count += 1        
         paste_med += "-\n"
         for k in recent_item.keys():
             if k not in ['modified', 'created']:
@@ -341,6 +352,7 @@ def lambda_handler(event, context):
         "content": paste_med
     }
     resp_med = http.request('POST', omg_paste_url, body=json.dumps(payload_med), headers=omg_headers)
+    print(f">>> {item_count} items written to pastebin")
 
     #--
     #-- IF THERE WERE ANY CHANGES, TRIGGER THE NOW PAGE CONTENT GENERATOR
