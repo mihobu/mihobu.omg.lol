@@ -56,6 +56,18 @@ def lambda_handler(event, context):
         "W": "Watching",
         "T": "Tinkering"
     }
+    rating_word = {
+        0.5: "Godawaful", 
+        1.0: "Terrible",
+        1.5: "Bad",
+        2.0: "Poor",
+        2.5: "Meh",
+        3.0: "Fair",
+        3.5: "Good",
+        4.0: "Great",
+        4.5: "Superb",
+        5.0: "Amazing"
+    }
     global req_attrs
     req_attrs = ['title', 'type']
     global opt_attrs 
@@ -129,14 +141,17 @@ I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
                     now += f" (Ep. {now_item['last-episode']})"
                 if 'progress' in now_item.keys():
                     pr = now_item['progress']
-                    mod_date = datetime.strptime(now_item['modified'], '%Y%m%d-%H%M%S')
-                    ttts = mod_date.strftime('%Y-%m-%d')
-                    now += f' <div class="progress-bar-container" style="--pct:{pr}%;" data-tooltip="{pr}% on {ttts}"></div>'
+                    if pr == "100":
+                        now += ' <img src="https://cdn.some.pics/mihobu/64d37c078bdb0.png" class="emoji">'
+                    else:
+                        mod_date = datetime.strptime(now_item['modified'], '%Y%m%d-%H%M%S')
+                        ttts = mod_date.strftime('%Y-%m-%d')
+                        now += f' <div class="progress-bar-container" style="--pct:{pr}%;" data-tooltip="{pr}% on {ttts}"></div>'
                 if 'rating' in now_item.keys():
                     rt = float(now_item['rating'])
                     num_full_stars = str(int(rt))
                     num_half_stars = "1" if (rt-int(rt)) > 0 else "0"
-                    now += f'<div class="star-rating" style="--f:{num_full_stars};--h:{num_half_stars}"></div>'
+                    now += f""" <div class="star-rating" style="--f:{num_full_stars};--h:{num_half_stars}" data-tooltip="{rating_word[rt]}" onclick="window.location.href='https://blog.mihobu.lol/2023/07/my-rating-system'"></div>"""
                 if 'icon' in now_item.keys():
                     now += f" {{{now_item['icon']}}}\n"
                 else:
@@ -144,7 +159,12 @@ I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
 
     now += '''
 
-<div class="nowlol"><a href="https://hello.mihobu.lol/">HELLO</a> ⎮ <span>NOW</span> ⎮ <a href="https://blog.mihobu.lol/">BLOG</a></div>
+<div class="nowlol">
+  <a href="https://hello.mihobu.lol/">HELLO</a> |
+  <span>NOW</span> |
+  <a href="https://blog.mihobu.lol/">BLOG</a> |
+  <a href="https://contact.mihobu.lol/">CONTACT</a>
+</div>
 
 {last-updated}
 
