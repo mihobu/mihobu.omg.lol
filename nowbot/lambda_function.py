@@ -173,6 +173,8 @@ I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
 <img id="dont-touch-image" src="https://mihobu.url.lol/profile-note" />
 
 <script src="https://tinylytics.app/embed/3uCnpsxr9keeKJvKdRxF.js" defer></script>
+<script src="https://blog.mihobu.lol/profile-note.js" defer></script>
+
 '''
 
     # CALL THE OMG.LOL API TO UPDATE THE NOW PAGE CONTENTS
