@@ -87,12 +87,6 @@ def lambda_handler(event, context):
     
     # GENERAL CONFIGURATION
     content_version = '7'
-    type_names = {
-        "L": "Listening",
-        "R": "Reading",
-        "W": "Watching",
-        "T": "Tinkering"
-    }
     global req_attrs
     req_attrs = ['title', 'type']
     global opt_attrs 
@@ -160,7 +154,7 @@ def lambda_handler(event, context):
             continue
     
         # Ignore type="W"
-        if input_item['type'] == "W":
+        if input_item['type'] in ["W", "B"]:
             continue
 
         # Get the item's ID, if it exists
@@ -337,8 +331,8 @@ def lambda_handler(event, context):
     item_count = 0
     for recent_item in sorted(recent_items, key=lambda x: x['modified'], reverse=True):
         
-        # Skip "watching" items -- these come only from Trakt.tv
-        if recent_item['type'] == "W":
+        # Skip "watching" (Trakt.tv) and "books" (Goodreads)
+        if recent_item['type'] in ["W", "B"]:
             continue
 
         item_count += 1        
