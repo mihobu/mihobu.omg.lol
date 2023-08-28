@@ -34,22 +34,35 @@ def get_value_from(test_list, name):
 # GET MY RATING FOR A GIVEN TRAKT ID
 # =====================================================================
 def get_rating(test_list, mitem):
-    if mitem['type'] == 'movie':
-        trakt_id = mitem['movie']['ids']['trakt']
-    elif mitem['type'] == 'episode':
-        trakt_id = mitem['episode']['ids']['trakt']
-    else:
-        return None
+    t = mitem['type']
+    trakt_id = mitem[t]['ids']['trakt']
+    #if mitem['type'] == 'movie':
+    #    trakt_id = mitem['movie']['ids']['trakt']
+    #elif mitem['type'] == 'episode':
+    #    trakt_id = mitem['episode']['ids']['trakt']
+    #else:
+    #    return None
 
     for item in test_list:
-        if (item['type'] == 'episode') and (str(item['episode']['ids']['trakt']) == str(trakt_id)):
-            return item['rating']
-        elif (item['type'] == 'movie') and (str(item['movie']['ids']['trakt']) == str(trakt_id)):
+        if (item['type']==t) and (str(item[t]['ids']['trakt'])==str(trakt_id)):
             return item['rating']
         else:
             continue
+        #if (item['type'] == 'episode') and (str(item['episode']['ids']['trakt']) == str(trakt_id)):
+        #    return item['rating']
+        #elif (item['type'] == 'movie') and (str(item['movie']['ids']['trakt']) == str(trakt_id)):
+        #    return item['rating']
+        #else:
+        #    continue
     
     return None
+
+# =====================================================================
+# GET ITEM'S TRAKT ID
+# =====================================================================
+def get_item_id(item):
+    t = item['type']
+    return str(f"{item[t]['ids']['trakt']}?id_type={t}")
 
 # =====================================================================
 # LAMBDA HANDLER FUNCTION
@@ -220,7 +233,8 @@ def lambda_handler(event, context):
     #-- COMPARE RECENT ITEMS WITH HISTORY ITEMS
     #--
     for item in sorted(history, key=lambda x: x['watched_at']):
-        trakt_id = str(item['id'])
+        #trakt_id = str(item['id'])
+        trakt_id = get_item_id(item)
         recent_item = find_item_in(recent_items, 'trakt_id', trakt_id)
         watched_dt = datetime.fromisoformat(item['watched_at'][:-1]) # from Trakt history
         hist_watched_ts = watched_dt.strftime('%Y%m%d-%H%M%S')
