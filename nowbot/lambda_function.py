@@ -78,7 +78,8 @@ def lambda_handler(event, context):
     table_name = f"now-content-v{content_version}"
     
     # OMG.LOL CONFIG
-    omg_now_url = 'https://api.omg.lol/address/mihobu/now'
+    #omg_now_url = 'https://api.omg.lol/address/mihobu/now'
+    omg_now_url = 'https://api.omg.lol/address/mihobu/weblog/entry/now-page-lambda'
     omg_headers = { 'Authorization': f'Bearer {omg_api_key}' }
     
     # GET A CONNECTION POOL
@@ -109,20 +110,22 @@ def lambda_handler(event, context):
     #-- CONSTRUCT AND UPDATE THE NOW PAGE CONTENT
     #--
     print("* Writing NOW content")
-    now = '''
-{profile-picture}
-    
-# Michael Burkhardt
+    nowts = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+    now = f"""
+---
+Date: {nowts}
+Type: Page
+Title: What I’m Doing Now
+Location: /now
+---
 
-## What I’m Doing Now
+# What I’m Doing Now
 
-This is what I’ve been into lately.
-
-I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
+This is what I’ve been into lately. I also post a [weekly summary](/tag/weeknotes).
 
 <script src="https://status.lol/mihobu.js?time&fluent&pretty&link"></script>
 
-'''
+"""
 
     # GET RECENT ITEMS IN EACH CATEGORY
     for typ in ["B", "R", "W", "L", "T"]: # In display order
@@ -133,23 +136,27 @@ I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
         else:
             type_icon = ''
         now += f"\n### {type_names[typ]} {type_icon}\n\n"
+        now += '<ul class="fa-ul">\n'
         now_items = sorted(filter_by_type(recent_items, typ), key=lambda x: x['modified'], reverse=True)
         if len(now_items) == 0:
-            now += "- No recent items to show {otter}\n"
+            now += f'''<li><span class="fa-li"><i class="fa-solid fa-otter"></i></span> No recent items to show</li>\n'''
+            #now += "- No recent items to show {otter}\n"
         else:
             for now_item in now_items:
-                
+                now += f'''<li><span class="fa-li"><i class="fa-solid fa-{now_item['icon']}"></i></span>'''
                 if 'url' in now_item.keys():
-                    now += f"- [{now_item['title']}]({now_item['url']})"
+                    now += f'''<a href="{now_item['url']}">{now_item['title']}</a>'''
+                    #now += f"- [{now_item['title']}]({now_item['url']})"
                 else:
-                    now += f"- {now_item['title']}"
+                    now += f'''{now_item['title']}'''
+                    #now += f"- {now_item['title']}"
                 if 'last-episode' in now_item.keys():
                     now += f" (Ep. {now_item['last-episode']})"
                 if 'rating' in now_item.keys():
                     rt = float(now_item['rating'])
                     num_full_stars = str(int(rt))
                     num_half_stars = "1" if (rt-int(rt)) > 0 else "0"
-                    now += f""" <div class="star-rating" style="--f:{num_full_stars};--h:{num_half_stars}" data-tooltip="{rating_word[rt]}" onclick="window.location.href='https://blog.mihobu.lol/2023/07/my-rating-system'"></div>"""
+                    now += f""" <div class="star-rating" style="--f:{num_full_stars};--h:{num_half_stars}" data-tooltip="{rating_word[rt]}" onclick="window.location.href='https://mihobu.lol/my-content-rating-system'"></div>"""
                 elif 'progress' in now_item.keys():
                     # This is in an ELIF because I don't want both rating and progress to be shown.
                     # I'm assuming if there's a rating, then I've finished the item.
@@ -160,29 +167,16 @@ I also post a [weekly summary](https://blog.mihobu.lol/tag/weeknotes).
                         mod_date = datetime.strptime(now_item['modified'], '%Y%m%d-%H%M%S')
                         ttts = mod_date.strftime('%Y-%m-%d')
                         now += f' <div class="progress-bar-container" style="--pct:{pr}%;" data-tooltip="{pr}% on {ttts}"></div>'
-                if 'icon' in now_item.keys():
-                    now += f" {{{now_item['icon']}}}\n"
-                else:
-                    now += f" {{otter}}\n"
+                #if 'icon' in now_item.keys():
+                #    now += f" {{{now_item['icon']}}}\n"
+                #else:
+                #    now += f" {{otter}}\n"
+                now += "</li>\n"
+        now += '</ul>\n'
 
     now += '''
 
-<div class="nowlol">
-  <a href="https://hello.mihobu.lol/">HELLO</a> |
-  <span>NOW</span> |
-  <a href="https://blog.mihobu.lol/">BLOG</a> |
-  <a href="https://contact.mihobu.lol/">CONTACT</a>
-</div>
-
-{last-updated}
-
 <div style="display:none"><a rel="me" href="https://social.lol/@mihobu">Mastodon</a></div>
-
-<img id="dont-touch-image" src="https://mihobu.url.lol/profile-note" />
-
-<script src="https://tinylytics.app/embed/3uCnpsxr9keeKJvKdRxF.js" defer></script>
-<script src="https://blog.mihobu.lol/profile-note.js" defer></script>
-
 '''
 
     # CALL THE OMG.LOL API TO UPDATE THE NOW PAGE CONTENTS
