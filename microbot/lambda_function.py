@@ -89,7 +89,9 @@ def lambda_handler(event, context):
             tags = "Microblog"
             if len(status['media_attachments']) > 0:
                 tags += ", Pics"
-    
+            for stag in status['tags']:
+                tags += f", {stag['name']}"
+
             # Construct post content
             c = "---\n"
             ts = datetime.strptime(status['created_at'][:19], "%Y-%m-%dT%H:%M:%S")#.strftime("%Y-%m-%d %H:%M:%S")
