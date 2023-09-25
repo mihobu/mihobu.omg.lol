@@ -78,8 +78,7 @@ def lambda_handler(event, context):
     table_name = f"now-content-v{content_version}"
     
     # OMG.LOL CONFIG
-    #omg_now_url = 'https://api.omg.lol/address/mihobu/now'
-    omg_now_url = 'https://api.omg.lol/address/mihobu/weblog/entry/now-page-lambda'
+    omg_now_url = 'https://api.omg.lol/address/mihobu/now'
     omg_headers = { 'Authorization': f'Bearer {omg_api_key}' }
     
     # GET A CONNECTION POOL
@@ -112,14 +111,6 @@ def lambda_handler(event, context):
     print("* Writing NOW content")
     nowts = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
     now = f"""
----
-Date: {nowts}
-Type: Page
-Title: What I’m Doing Now
-Location: /now
----
-
-# What I’m Doing Now
 
 This is what I’ve been into lately. I also post a [weekly summary](/tag/weeknotes).
 
@@ -129,29 +120,34 @@ This is what I’ve been into lately. I also post a [weekly summary](/tag/weekno
 
     # GET RECENT ITEMS IN EACH CATEGORY
     for typ in ["B", "R", "W", "L", "T"]: # In display order
+
         if typ == "W":
             type_icon = '<img src="https://cdn.some.pics/mihobu/64b09a5b33bac.png" class="emoji">'
         elif typ == "B":
             type_icon = '<img src="https://cdn.some.pics/mihobu/64e7a5eb061be.png" class="emoji">'
         else:
             type_icon = ''
+
         now += f"\n### {type_names[typ]} {type_icon}\n\n"
-        now += '<ul class="fa-ul">\n'
+        #now += '<ul class="fa-ul">\n'
         now_items = sorted(filter_by_type(recent_items, typ), key=lambda x: x['modified'], reverse=True)
         if len(now_items) == 0:
-            now += f'''<li><span class="fa-li"><i class="fa-solid fa-otter"></i></span> No recent items to show</li>\n'''
-            #now += "- No recent items to show {otter}\n"
+            #now += f'''<li><span class="fa-li"><i class="fa-solid fa-otter"></i></span> No recent items to show</li>\n'''
+            now += "- No recent items to show {otter}\n"
         else:
             for now_item in now_items:
-                now += f'''<li><span class="fa-li"><i class="fa-solid fa-{now_item['icon']}"></i></span>'''
+                #now += f'''<li><span class="fa-li"><i class="fa-solid fa-{now_item['icon']}"></i></span>'''
+                
                 if 'url' in now_item.keys():
-                    now += f'''<a href="{now_item['url']}">{now_item['title']}</a>'''
-                    #now += f"- [{now_item['title']}]({now_item['url']})"
+                    #now += f'''<a href="{now_item['url']}">{now_item['title']}</a>'''
+                    now += f"- [{now_item['title']}]({now_item['url']})"
                 else:
-                    now += f'''{now_item['title']}'''
-                    #now += f"- {now_item['title']}"
+                    #now += f'''{now_item['title']}'''
+                    now += f"- {now_item['title']}"
+                    
                 if 'last-episode' in now_item.keys():
                     now += f" (Ep. {now_item['last-episode']})"
+                    
                 if 'rating' in now_item.keys():
                     rt = float(now_item['rating'])
                     num_full_stars = str(int(rt))
@@ -167,12 +163,14 @@ This is what I’ve been into lately. I also post a [weekly summary](/tag/weekno
                         mod_date = datetime.strptime(now_item['modified'], '%Y%m%d-%H%M%S')
                         ttts = mod_date.strftime('%Y-%m-%d')
                         now += f' <div class="progress-bar-container" style="--pct:{pr}%;" data-tooltip="{pr}% on {ttts}"></div>'
-                #if 'icon' in now_item.keys():
-                #    now += f" {{{now_item['icon']}}}\n"
-                #else:
-                #    now += f" {{otter}}\n"
-                now += "</li>\n"
-        now += '</ul>\n'
+
+                if 'icon' in now_item.keys():
+                    now += f" {{{now_item['icon']}}}\n"
+                else:
+                    now += f" {{otter}}\n"
+
+                #now += "</li>\n"
+        #now += '</ul>\n'
 
     now += '''
 
