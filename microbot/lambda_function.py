@@ -100,6 +100,7 @@ def lambda_handler(event, context):
             c += f"Title: {title}\n"
             c += f"Slug: {entry}\n"
             c += "---\n\n"
+            c += f"# {title}\n\n"
             c += f"{status['content']}\n\n"
             if len(status['media_attachments']) > 0:
                 c += f"![]({status['media_attachments'][0]['url']})\n"
