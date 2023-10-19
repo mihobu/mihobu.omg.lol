@@ -66,6 +66,9 @@ def lambda_handler(event, context):
         print(f"{len(statuses)} statuses returned.")
         for status in statuses:
     
+            # Extract a list of this status's tags in lowercase
+            status_tags = [ctag['name'].lower() for ctag in status['tags']]
+
             # Find and store highest status ID --> since_id
             if status['id'] > since_id:
                 since_id = status['id']
@@ -80,9 +83,10 @@ def lambda_handler(event, context):
                 print(f"Post {status['id']} is a reblog...skipping")
                 continue
     
-            # Ignore posts tagged with "weeknotes"
-            if "weeknotes" in [ctag['name'].lower() for ctag in status['tags']]:
-                print(f"Post {status['id']} is tagged with weeknotes...skipping")
+            # Ignore posts tagged with "weeknotes" or "weblog"
+            ignore_tags = ["weeknotes", "weblog"]
+            if any(t in status_tags for t in ignore_tags):
+                print(f"Post {status['id']} is has an ignored tag...skipping")
                 continue
 
             # construct entry identifier
