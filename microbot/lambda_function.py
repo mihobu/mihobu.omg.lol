@@ -103,11 +103,13 @@ def lambda_handler(event, context):
             content_md = html2text.html2text(status['content'], bodywidth=0) # extract markdown
 
             # Split on first newline
+            separate_title = False
             reres = re.search("^([^\n]+)\n+", content_md)
             if reres is not None:
                 # Extract the first line as the title, and the rest as the content
                 title = reres[1]
                 content = content_md[reres.end(0):]
+                separate_title = True
             else:
                 # No newline present, so construct a title
                 plain = re.sub('\s*\n\s*|\s{2,}', ' ', content_md.strip())
@@ -116,7 +118,7 @@ def lambda_handler(event, context):
                 else:
                     title = content_md[:50]
                 content = content_md[50:]
-    
+
             # NOW WE'VE GOT THE TITLE AND CONTENT
             
             # Look for one my my "special" tags
@@ -167,17 +169,16 @@ def lambda_handler(event, context):
                 c += f"Title: {title}\n"
                 c += f"Slug: {entry}\n"
                 c += "---\n\n"
-                #c += f"# Microblog Post #{status['id']}\n\n"
-                c += f"# {title}\n\n"
-                #c += f"{status['content']}\n\n"
+                if separate_title:
+                    c += f"{title}\n\n"
                 c += f"{content}\n\n"
                 if len(status['media_attachments']) > 0:
                     c += f"![]({status['media_attachments'][0]['url']})\n"
-                c += f"""
-<script>
-const mastodonLink = "{status['url']}";
-</script>
-"""
+                #c += f"""
+                #<script>
+                #const mastodonLink = "{status['url']}";
+                #</script>
+                #"""
 
                 # Write post to weblog
                 resp2 = http.request('POST', f"{omg_weblog_entry}/{entry}", body=c.encode('utf-8'), headers=omg_headers)
