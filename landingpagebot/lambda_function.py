@@ -4,7 +4,7 @@ import json
 import os
 import re
 import urllib3
-from datetime import datetime
+from datetime import datetime, timezone
 
 # =====================================================================
 # RETURN THE VALUE FROM A DICT IN A GIVEN LIST IF THE NAME MATCHES
@@ -85,6 +85,8 @@ def lambda_handler(event, context):
     #-- ARE THERE ANY NEW WEBLOG POSTS?
     #--
     last_post_date = max([post['date'] for post in posts])
+    print(f"--- Last post date       : {last_post_date}")
+    print(f"--- Weblog last timestamp: {weblog_last_ts}")
     if last_post_date <= weblog_last_ts:
         print("--- No new weblog entries...Exiting")
         return {}
@@ -94,11 +96,10 @@ def lambda_handler(event, context):
     #--
     
     # --- PART 1. METADATA -----------------------------------------------------
-    page_ts = datetime.now().strftime("%Y-%m-%d %H:%S")
+    page_ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
     slpc = f"""---
 Date: {page_ts}
 Type: Page
-Template: Static Landing Page Template
 Status: live
 Title: Static Landing Page
 Location: /landing-page
@@ -206,24 +207,24 @@ Location: /landing-page
 
 <div class="cell cell3"> <!-- FEATURED CONTENT -->
 <h1>Featured Content</h2>
-<ul>
-<li><b><a href="/hello">About Me</a></b></li>
-<li><b><a href="/now">What I’m Doing Now</a></b></li>
-<li><a href="/uses">My Indispensable Stuff</a></li>
-<li><a href="/social-media-survey">Social Media Survey</a></li>
-<li><a href="/my-content-rating-system">My Content Rating System</a></li>
-<li><a href="/downloads">Downloads</a></li>
-<li><a href="/calendar">ISO Week Calendar</a></li>
+<ul class="fa-ul">
+<li><span class="fa-li"><i class="fa-solid fa-circle-user"></i></span><b><a href="/hello">About Me</a></b></li>
+<li><span class="fa-li"><i class="fa-solid fa-person-running"></i></span><b><a href="/now">What I’m Doing Now</a></b></li>
+<li><span class="fa-li"><i class="fa-solid fa-suitcase"></i></span><a href="/uses">My Indispensable Stuff</a></li>
+<li><span class="fa-li"><i class="fa-solid fa-thumbs-up"></i></span><a href="/social-media-survey">Social Media Survey</a></li>
+<li><span class="fa-li"><i class="fa-solid fa-ranking-star"></i></span><a href="/my-content-rating-system">My Content Rating System</a></li>
+<li><span class="fa-li"><i class="fa-solid fa-download"></i></span><a href="/downloads">Downloads</a></li>
+<li><span class="fa-li"><i class="fa-solid fa-calendar-week"></i></span><a href="/calendar">ISO Week Calendar</a></li>
 </ul>
 </div> <!-- FEATURED CONTENT -->
 
 <div class="cell cell3"> <!-- OTHER PROJECTS -->
 <h1>Other Projects</h1>
-<ul>
-<li><b><a href="https://rwau.cc">Recipes We Actually Use</a></b></li>
-<li><a href="https://monkeywalk.com/tps-frequency-dictionary-of-mandarin-chinese">TPS Frequency Dictionary of Mandarin Chinese</a></li>
-<li><a href="https://monkeywalk.com/eating-the-dragon">Eating the Dragon</a></li>
-<li><a href="https://mihobu.lol/tag/stereoscopy">Sterescopic Imaging Project</a></li>
+<ul class="fa-ul">
+<li><span class="fa-li"><i class="fa-solid fa-kitchen-set"></i></span><b><a href="https://rwau.cc">Recipes We Actually Use</a></b></li>
+<li><span class="fa-li"><i class="fa-solid fa-book"></i></span><a href="https://monkeywalk.com/tps-frequency-dictionary-of-mandarin-chinese">TPS Frequency Dictionary of Mandarin Chinese</a></li>
+<li><span class="fa-li"><i class="fa-solid fa-dragon"></i></span><a href="https://monkeywalk.com/eating-the-dragon">Eating the Dragon</a></li>
+<li><span class="fa-li"><i class="fa-solid fa-vr-cardboard"></i></span><a href="https://mihobu.lol/tag/stereoscopy">Sterescopic Imaging Project</a></li>
 </ul>
 </div> <!-- OTHER PROJECTS -->
 
@@ -263,7 +264,7 @@ Location: /landing-page
     weblog_last_ts
     resp4 = ssm_client.put_parameter(
         Name='WEBLOG_LAST_TS',
-        Value=str(weblog_last_ts),
+        Value=str(last_post_date),
         Overwrite=True
     )
     
