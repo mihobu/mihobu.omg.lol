@@ -101,7 +101,7 @@ def lambda_handler(event, context):
 Date: {page_ts}
 Type: Page
 Status: live
-Title: Static Landing Page
+Title: Home
 Location: /landing-page
 ---
 """
@@ -115,9 +115,11 @@ Location: /landing-page
     reres = re.search("<!-- CUT -->", md, re.MULTILINE)
     if reres is not None:
         print(f'Cut point found at {reres.start(0)}')
-        #print(output[:reres.start(0)])
+        fpcontent = md[:reres.start(0)]
     else:
+        # This isn't working correctly
         print('No cut point found')
+        fpcontent = post['body']
     
     slpc += f"""
 <div class="landing-container">
@@ -125,7 +127,7 @@ Location: /landing-page
 <div class="cell cell1c"> <!-- FEATURED POST -->
 <div class="landing-page-category">Featured Post • {post_lts}</div>
 
-{md[:reres.start(0)]}
+{fpcontent}
 
 [Continue reading...]({post['location']})
 
