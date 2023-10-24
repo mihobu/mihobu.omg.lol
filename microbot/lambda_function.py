@@ -173,7 +173,10 @@ def lambda_handler(event, context):
                     c += f"{title}\n\n"
                 c += f"{content}\n\n"
                 if len(status['media_attachments']) > 0:
-                    c += f"![]({status['media_attachments'][0]['url']})\n"
+                    c += '<p class="micro-pics">\n'
+                    for ix in range(len(status['media_attachments'])):
+                        c += f"""<img src="{status['media_attachments'][ix]['url']}">\n"""
+                    c += '</p>\n'
                 #c += f"""
                 #<script>
                 #const mastodonLink = "{status['url']}";
