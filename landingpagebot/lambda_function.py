@@ -25,6 +25,13 @@ def OMG_API_URL(address, prefix, key=None):
 def lambda_handler(event, context):
 
     #--
+    #-- FORCE REBUILD?
+    #--
+    force_rebuild = False
+    if 'force' in event.keys():
+        force_rebuild = True
+
+    #--
     #-- GET PARAMETERS FROM PARAMETER STORE
     #--
     ssm_client = boto3.client('ssm')
@@ -87,7 +94,7 @@ def lambda_handler(event, context):
     last_post_date = max([post['date'] for post in posts])
     print(f"--- Last post date       : {last_post_date}")
     print(f"--- Weblog last timestamp: {weblog_last_ts}")
-    if last_post_date <= weblog_last_ts:
+    if (last_post_date <= weblog_last_ts) and not force_rebuild:
         print("--- No new weblog entries...Exiting")
         return {}
 
@@ -147,7 +154,7 @@ Location: /landing-page
         slpc += f"""
 {posts[ix]['body']}
 
-<p><aside class="post-info"><i class="fa-solid fa-clock"></i>{post_ts}</aside></p>
+<p><aside class="post-info"><i class="fa-solid fa-clock"></i><a href="{post['location']}">{post_ts}</a></aside></p>
 
 <div style="border-top:1px solid #999;"></div>
 """
@@ -184,7 +191,7 @@ Location: /landing-page
 
 {abstract}
 
-<p><aside class="post-info"><i class="fa-solid fa-clock"></i>{post_ts}</aside></p>
+<p><aside class="post-info"><i class="fa-solid fa-clock"></i><a href="{post['location']}">{post_ts}</a></aside></p>
 
 <div style="border-top:1px solid #999;"></div>
 """
