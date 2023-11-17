@@ -157,7 +157,7 @@ def lambda_handler(event, context):
                 # construct tags
                 tags = "Microblog"
                 if len(status['media_attachments']) > 0:
-                    tags += ", Pics"
+                    tags += ", Photography"
                 for stag in status['tags']:
                     tags += f", {stag['name']}"
     
@@ -177,11 +177,11 @@ def lambda_handler(event, context):
                     for ix in range(len(status['media_attachments'])):
                         c += f"""<img src="{status['media_attachments'][ix]['url']}">\n"""
                     c += '</p>\n'
-                #c += f"""
-                #<script>
-                #const mastodonLink = "{status['url']}";
-                #</script>
-                #"""
+                c += f"""
+<script>
+var mastodonLink = "{status['url']}";
+</script>
+"""
 
                 # Write post to weblog
                 resp2 = http.request('POST', f"{omg_weblog_entry}/{entry}", body=c.encode('utf-8'), headers=omg_headers)
